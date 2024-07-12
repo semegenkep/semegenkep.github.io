@@ -1,7 +1,7 @@
 {
   "squadName" : "Super Hero Squad",
-  "homeTown" : "Ivano-Frankivsk",
-  "formed" : 2023,
+  "homeTown" : "Metro City",
+  "formed" : 2020,
   "secretBase" : "Super tower",
   "active" : true,
   "members" : [
