@@ -1,7 +1,7 @@
 {
   "squadName" : "Super Hero Squad",
-  "homeTown" : "Metro City",
-  "formed" : 2020,
+  "homeTown" : "Ivano-Frankivsk",
+  "formed" : 2024,
   "secretBase" : "Super tower",
   "active" : true,
   "members" : [
@@ -22,7 +22,8 @@
       "powers" : [
         "Million tonne punch",
         "Damage resistance",
-        "Superhuman reflexes"
+        "Superhuman reflexes",
+        "Superhuman reflexes 2222"
       ]
     },
     {
