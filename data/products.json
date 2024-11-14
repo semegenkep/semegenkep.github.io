@@ -12,7 +12,7 @@
     "title": "Sony WH-1000XM4",
     "price": "$349.99",
     "image": "images/headphones/ImagePlaceholder2.jpg",
-    "isNew": false,
+    "isNew": true,
     "rating": 4
   },
   {
@@ -28,7 +28,7 @@
     "title": "Sennheiser Momentum 3",
     "price": "$399.99",
     "image": "images/headphones/ImagePlaceholder4.jpg",
-    "isNew": false,
+    "isNew": true,
     "rating": 4
   },
   {
@@ -44,7 +44,7 @@
     "title": "Apple AirPods Max",
     "price": "$549.99",
     "image": "images/headphones/ImagePlaceholder6.jpg",
-    "isNew": false,
+    "isNew": true,
     "rating": 5
   },
   {
@@ -60,7 +60,7 @@
     "title": "AKG N700NC M2",
     "price": "$199.99",
     "image": "images/headphones/ImagePlaceholder8.jpg",
-    "isNew": false,
+    "isNew": true,
     "rating": 4
   },
   {
