@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Skullcandy - Crusher ANC 2",
     "price": "$299.99",
-    "image": "images/headphones/ImagePlaceholder1.jpg",
+    "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
     "rating": 5
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "title": "Sennheiser Momentum 3",
     "price": "$399.99",
-    "image": "images/headphones/ImagePlaceholder4.jpg",
+    "image": "images/headphones/ImagePlaceholder5.jpg",
     "isNew": true,
     "rating": 4
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "title": "JBL Live 660NC",
     "price": "$199.99",
-    "image": "images/headphones/ImagePlaceholder5.jpg",
+    "image": "images/headphones/ImagePlaceholder6.jpg",
     "isNew": true,
     "rating": 4
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "title": "Apple AirPods Max",
     "price": "$549.99",
-    "image": "images/headphones/ImagePlaceholder6.jpg",
+    "image": "images/headphones/ImagePlaceholder7.jpg",
     "isNew": true,
     "rating": 5
   },
@@ -51,24 +51,8 @@
     "id": 7,
     "title": "Beats Studio3",
     "price": "$349.99",
-    "image": "images/headphones/ImagePlaceholder7.jpg",
+    "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
     "rating": 5
   },
-  {
-    "id": 8,
-    "title": "AKG N700NC M2",
-    "price": "$199.99",
-    "image": "images/headphones/ImagePlaceholder8.jpg",
-    "isNew": true,
-    "rating": 4
-  },
-  {
-    "id": 9,
-    "title": "Beyerdynamic DT 770 Pro",
-    "price": "$179.99",
-    "image": "images/headphones/ImagePlaceholder9.jpg",
-    "isNew": true,
-    "rating": 4
-  }
 ]
