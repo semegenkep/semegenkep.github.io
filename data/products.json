@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Skullcandy - Crusher ANC 2",
+    "title": "Skullcandy - Crusher anc 2 wireless headphones",
     "price": "$299.99",
     "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "title": "Sony WH-1000XM4",
+    "title": "Beats Studio Pro",
     "price": "$349.99",
     "image": "images/headphones/ImagePlaceholder2.jpg",
     "isNew": true,
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "title": "Bose QuietComfort 35 II",
+    "title": "Sony - WH-CH720N Wireless Noise Canceling",
     "price": "$299.99",
     "image": "images/headphones/ImagePlaceholder3.jpg",
     "isNew": true,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "title": "Sennheiser Momentum 3",
+    "title": "Beats Studio Pro",
     "price": "$399.99",
     "image": "images/headphones/ImagePlaceholder5.jpg",
     "isNew": true,
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "title": "JBL Live 660NC",
+    "title": "Sony - WH-1000XM5 Wireless Noise Canceling",
     "price": "$199.99",
     "image": "images/headphones/ImagePlaceholder6.jpg",
     "isNew": true,
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "title": "Apple AirPods Max",
+    "title": "JBL Reflect Flow Pro+ Bluetooth Truly Wireless Sports",
     "price": "$549.99",
     "image": "images/headphones/ImagePlaceholder7.jpg",
     "isNew": true,
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "title": "Beats Studio3",
+    "title": "AKG Y600NC Wireless",
     "price": "$349.99",
     "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
