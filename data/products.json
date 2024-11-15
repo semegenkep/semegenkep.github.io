@@ -5,6 +5,7 @@
     "price": "1299",
     "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 5
   },
   {
@@ -12,7 +13,8 @@
     "title": "Beats Studio Pro",
     "price": "2349",
     "image": "images/headphones/ImagePlaceholder2.jpg",
-    "isNew": true,
+    "isNew": false,
+    "bestseller": true,
     "rating": 4
   },
   {
@@ -21,6 +23,7 @@
     "price": "2299",
     "image": "images/headphones/ImagePlaceholder3.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 5
   },
   {
@@ -29,6 +32,7 @@
     "price": "3399",
     "image": "images/headphones/ImagePlaceholder5.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 4
   },
   {
@@ -36,7 +40,8 @@
     "title": "Sony - WH-1000XM5 Wireless Noise Canceling",
     "price": "1199",
     "image": "images/headphones/ImagePlaceholder6.jpg",
-    "isNew": true,
+    "isNew": false,
+    "bestseller": true,
     "rating": 4
   },
   {
@@ -45,6 +50,7 @@
     "price": "2549",
     "image": "images/headphones/ImagePlaceholder7.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 5
   },
   {
@@ -53,6 +59,7 @@
     "price": "2349",
     "image": "images/headphones/ImagePlaceholder.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 5
   },
   {
@@ -61,6 +68,7 @@
     "price": "2349",
     "image": "images/headphones/ImagePlaceholder8.jpg",
     "isNew": true,
+    "bestseller": true,
     "rating": 5
   }
 ]
