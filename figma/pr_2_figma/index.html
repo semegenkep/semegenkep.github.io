@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token"
+        content="hbihcFapEKYczH7e1QQTYmvoxzbrE7jmMPbyNJMeFBa91pI3P-NJ_3-uIbO4QyQFAoH1Qt0j09dyzpUEwCpYdA==">
+    <title>ЛР2. Групи. Шари. Піпетка. Імпортування зображень.</title>
+    <meta name="description"
+        content="Фігма для новачків. Частина 2. Як працювати з групами і навіщо вони потрібні, вкладені групи, виділення шарів, блокування та приховування шару, як називати шари, імпорт зображень з файлу інструмент піпетка, як поділитися проектом.">
+    <link
+        href="pr2_files/bootstrap.css"
+        rel="stylesheet">
+    <link
+        href="pr2_files/styles46.css"
+        rel="stylesheet">
+    <link
+        href="pr2_files/emoji-cut.css"
+        rel="stylesheet">
+    <link
+        href="pr2_files/slick.css"
+        rel="stylesheet">
+    <link
+        href="pr2_files/slick-theme.css"
+        rel="stylesheet">
+    <link
+        href="pr2_files/dropdown-x.min.css"
+        rel="stylesheet">
+
+    <link rel="mask-icon" href="https://frusia.pro/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async=""
+        src="pr2_files/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="pr2_files/js.js"></script>
+    <script
+        src="pr2_files/901767251576442.js"
+        async=""></script>
+    <script async=""
+        src="pr2_files/fbevents.js"></script>
+    <script async=""
+        src="pr2_files/js_002.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151312573-1');
+    </script>
+
+
+    <meta name="facebook-domain-verification" content="aipds6t6j2va0hp1opvgijr91k9zt7">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '901767251576442');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=901767251576442&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <div class="wrap" style="">
+        <div id="wrap-content" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 main-content">
+                    <div id="enroll-to-course-modal" class="fade modal" role="dialog" tabindex="-1">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">×</button>
+                                    <h3 style="margin:0">Записатись на курс</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p>Щоб продовжити, увійдіть в систему або зареєструйтесь.</p>
+                                        </div>
+                                        <div style="margin-bottom:8px" class="col-md-6"><a
+                                                class="btn btn-primary btn-lg" href="https://frusia.pro/login"
+                                                style="width:100%">Увійти</a></div>
+                                        <div style="margin-bottom:8px" class="col-md-6"><a
+                                                class="btn btn-primary btn-lg" href="https://frusia.pro/signup"
+                                                style="width:100%">Зареєструватись</a></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row article-header">
+                        <div class="col-md-12">
+                            <div class="hidden-xs hidden-sm visible-md visible-lg"><img width="1140" height="512"
+                                    style="background:#F05F98" class="img-responsive lazy loaded"
+                                    data-src="/files/2020-05/0011-preview-horz-v5.svg" alt="Основи Figma. Частина 2"
+                                    src="pr2_files/0011-preview-horz-v5.svg"
+                                    data-ll-status="loaded"></div><br>
+                            <div class="hidden-md hidden-lg"><img width="1140" height="1140" style="background:#F05F98"
+                                    class="img-responsive lazy" data-src="/files/2022-04/0011-preview-square-v2.svg"
+                                    alt="Основи Figma. Частина 2"></div><br>
+                            <h1>Тема: Групи. Шари. Піпетка. Імпортування зображень</h1>
+                            <div style="width:100%;text-align:center;font-size:150%;font-weight:regular;color:#B2B5B6">
+                                Лабораторна робота
+                            </div>
+                            <div class="hidden-md hidden-lg">
+                                <p>Щоб почати навчання, проходити тести і відслідкувати прогрес, треба записать на курс.
+                                    Це безкоштовно.</p>
+                                <form method="POST" action="/p/11" accept-charset="utf-8"><input type="hidden"
+                                        name="enroll_course_id" value="1"><input type="hidden" name="_csrf"
+                                        value="hbihcFapEKYczH7e1QQTYmvoxzbrE7jmMPbyNJMeFBa91pI3P-NJ_3-uIbO4QyQFAoH1Qt0j09dyzpUEwCpYdA=="><button
+                                        id="enroll-to-course-btn-mobile" style="margin-top:8px"
+                                        class="button enroll-to-course-btn">Записатись на курс</button></form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Продовжуємо
+                                    знайомство з основами Figma. Сьогодні дізнаємося про нові прийоми
+                                    роботи з шарами, у тому числі як їх виділяти, переміщувати, групувати,
+                                    блокувати і ховати.</p>
+
+                                <p>Навчимося вставляти растрове зображення в проєкт і дізнаємося, як
+                                    працювати з піпеткою, яка дозволяє зчитати код кольору із зображень і
+                                    фігур.</p>
+
+                                <p>Останній розділ з новими командами стосується виставлення точних
+                                    відстаней між об'єктами, що важливо надалі при роботі з сітками.</p>
+
+                                
+                                <ul>
+                                    <li><a href="#10">Групи</a></li>
+                                    <li><a href="#20">Створення та видалення групи</a></li>
+                                    <li><a href="#30">Згортання та розгортання групи</a></li>
+                                    <li><a href="#40">Вкладені групи</a></li>
+                                    <li><a href="#50">Перегрупування</a></li>
+
+                                    <li><a href="#60">Виділення шарів</a></li>
+                                    <li><a href="#70">Вибираємо вкладений шар</a></li>
+                                    <li><a href="#80">Вибираємо кілька шарів (новий спосіб)</a></li>
+                                    <li><a href="#90">Вибираємо діапазон шарів</a></li>
+                                    <li><a href="#100">Вибираємо перекритий шар</a></li>
+                                    <li><a href="#110">Знімаємо виділення</a></li>
+
+                                    <li><a href="#120">Робота з шарами</a></li>
+                                    <li><a href="#130">Блокування та приховування шарів</a></li>
+                                    <li><a href="#140">Копіювання, вирізання та вставка шарів</a></li>
+                                    <li><a href="#150">Вставка у позицію іншого об'єкта</a></li>
+
+                                    <li><a href="#160">Назви шарів</a></li>
+                                    <li><a href="#170">Перейменування шарів</a></li>
+                                    <li><a href="#180">Давайте змістовні назви</a></li>
+
+                                    <li><a href="#190">Імпорт зображень</a></li>
+                                    <li><a href="#200">Референси та мудборди</a></li>
+                                    <li><a href="#210">Імпорт із буфера обміну</a></li>
+                                    <li><a href="#220">Імпорт із файлу</a></li>
+
+                                    <li><a href="#230">Інструмент піпетка</a></li>
+                                    <li><a href="#240">Швидке привласнення кольору</a></li>
+                                    <li><a href="#250">Привласнення кольору пікселів зображення</a></li>
+
+                                    <li><a href="#260">Точне позиціювання</a></li>
+                                    <li><a href="#270">Як поділитись проєктом</a></li>
+
+                                    <li><a href="#280">Домашнє завдання</a></li>
+                                    <li><a href="#290">Висновки</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="10"></a>
+                                <h2>Групи</h2>
+                                <p>Виконуючи завдання з минулої лабораторної роботи, ви обов'язково
+                                    зіткнулися з проблемою управління шарами. Наприклад, будь-яка кнопка
+                                    складається з прямокутника (визначає межі) та тексту (який пояснює, що
+                                    ця кнопка робить). Щоб перемістити кнопку, вам доведеться спочатку
+                                    виділити кожну її складову. А якщо ви захочете перемістити верхню
+                                    частину сайту з навігаційним меню, яке складається з 5 текстових
+                                    елементів? Це вже займе більше часу. З такими мікро-завданнями будете
+                                    зустрічатись постійно.</p>
+
+                                <p> Для вирішення цієї проблеми у Figma існує декілька способів:
+                                    використання груп, фреймів або автолейаутів. Поки що ми розглянемо
+                                    найпростіший варіант, а саме групування елементів.</p>
+
+                                <p>
+                                    Наприклад, прямокутник і текст можна <strong>об'єднати в одну групу за
+                                        змістом</strong> і це вже буде кнопка. Це дуже зручно та значно прискорює
+                                    роботу.</p>
+
+                                <p><strong>Група</strong>&nbsp;— це спеціальний шар, який вміщує інші
+                                    шари і призначена для об'єднання і спрощення подальшої роботи з ними.
+                                    Група працює як з великою кількістю шарів, так з одним.
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="20"></a>
+                                <h2>Створення та видалення групи</h2>
+                                <p>Припустимо, що нам потрібно об'єднати кілька примітивів, що складають кнопку у групу.
+                                    Для цього:</p>
+
+                                <ol>
+                                    <li>Скористаємося прийомом з минулої лабораторної роботи, затиснувши ліву кнопку миші
+                                        зверху ліворуч і потягнувши її в нижній правий кут, тим самим виділимо
+                                        всі примітиви, з яких побудована кнопка. На панелі зліва підсвічуються
+                                        виділені шари;</li>
+
+                                    <li>Натискаємо праву кнопку миші над будь-яким із компонентів кнопки і з меню
+                                        обираємо <strong>Group Selection</strong>. Доступна і комбінація гарячих клавіш
+                                        для швидкого об'єднання: <strong>Command + G</strong> у MacOs або
+                                        <strong>Control + G</strong> у Windows;</li>
+
+                                    <li>Зверніть увагу, що в панелі шарів замість двох виділених примітивів з'явився
+                                        один шар з новою іконкою та назвою <strong>Group 1</strong> – це і є наша
+                                        кнопка;</li>
+
+                                    <li>Тепер ви можете працювати з кнопкою, як зі звичайним шаром:
+                                        переміщувати, масштабувати, дублювати і так далі без необхідності
+                                        виділяти кожен шар окремо;</li>
+
+                                    <li>Щоб розбити кнопку назад на складові, потрібно виділити групу і в контекстному
+                                        меню вибрати <strong>Ungroup</strong> або натиснути
+                                        <strong>Shift+Command+G</strong> у MacOs або <strong>Shift+Control+ G</strong> у
+                                        Windows;</li>
+
+                                </ol>
+
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-01-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-01-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="30"></a>
+                                <h2>Згортання та розгортання групи</h2>
+                                <p>Як ви помітили, після створення групи вміст автоматично приховується.
+                                    Цей стан називається згорнутою групою. Щоб показати вміст, потрібно
+                                    розгорнути групу:</p>
+
+                                <ol>
+                                    <li>Підвести курсор до панелі шарів. Зліва напроти кожної групи з'явиться маленька
+                                        трикутна стрілочка, що вказує вправо;</li>
+
+                                    <li>Клацаєм на стрілочку і вміст групи стане видимим. Стрілка повернеться донизу,
+                                        сигналізуючи про розгорнутий стан;</li>
+
+                                    <li>Щоб знову згорнути вміст, ще раз натисніть на стрілку.</li>
+
+                                </ol>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-02-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-02-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="40"></a>
+                                <h2>Вкладені групи</h2>
+                                <p>Групи можуть включати інші групи. Для цього достатньо вибрати кілька
+                                    шарів із групою і зробити ще одну групу. Шар, який знаходиться всередині
+                                    групи, називається <strong>дочірнім</strong>. Шар-група, в якій знаходяться інші
+                                    шари, називається <strong>батьківською</strong>.</p>
+
+                                <p>Навіщо це може знадобитися? Все з тією ж метою: для зручної та
+                                    швидкої роботи. Розглянемо приклад. Кілька кнопок та логотип з
+                                    підкладкою можуть бути об'єднані в так звану <strong>шапку сайту</strong>
+                                    (англійською – header, читається <i>хедер</i>)
+                                    – елемент дизайну, який повторюється на всіх сторінках і зазвичай
+                                    містить засоби швидкої навігації. В очах Figma це просто група з іншими
+                                    вкладеними групами.</p>
+
+                                <p>Так ось, якщо нам знадобиться перемістити кнопки всередині шапки
+                                    сайту, то ми можемо розгорнути відповідну групу та працювати з групою
+                                    кожної кнопки.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2024-12/0010-38.mp4" type="video/mp4"
+                                            src="pr2_files/0010-38.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="50"></a>
+                                <h2>Перегрупування</h2>
+                                <p>Інколи може знадобитись перемістити шар з однієї групи до іншої або доповнити групу
+                                    новими прошарками.</p>
+
+                                <p>Для цього достатньо перетягнути шар на потрібну групу в панелі шарів і
+                                    він миттєво опиниться всередині. Також можна перетягнути його у
+                                    потрібне місце між шарами усередині розгорнутої групи. Якщо шар потрібно
+                                    прибрати з групи, його потрібно перетягнути в область над групою або
+                                    під нею, як показано у відео:</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-04-v5.mp4" type="video/mp4"
+                                            src="pr2_files/0011-04-v5.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="60"></a>
+                                <h2>Виділення шарів</h2>
+                                <p>Ми вже вміємо виділяти об'єкти за допомогою клацання по них у робочій
+                                    області або на панелі шарів. Також, ми знаємо, як виділити кілька шарів
+                                    за допомогою рамки, затиснувши ліву кнопку миші в робочій області.
+                                    Зараз познайомимося з новими прийомами та дізнаємось, як виділяти
+                                    вкладені шари без розгортання групи.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="70"></a>
+                                <h2>Вибираємо вкладений шар</h2>
+                                <p>Повернемося до нашого прикладу з шапкою сайту. Щоб виділити кнопку,
+                                    достатньо зробити подвіний клік по ній, що автоматично розгорне верхню
+                                    групу.</p>
+
+                                <p>Щоб спуститися нижче по дереву вкладеності та виділити напис на
+                                    кнопці, достатньо зробити ще один подвійний клік. Як ви вже зрозуміли,
+                                    подвійний клік дозволяє виділити об'єкти на один рівень вкладеності
+                                    нижче за поточний.</p>
+
+                                <p>Подвійний клік прискорює виділення під час роботи з вкладеними шарами
+                                    та значно швидше за розгортання груп вручну. Але що якщо рівнів
+                                    вкладеності більше одного? Тоді доведеться робити кілька подвійних
+                                    кліків. Щоб виділити об'єкт на нижньому рівні вкладеності, достатньо
+                                    затиснути <strong>Command</strong> у MacOs або <strong>Ctrl</strong> у Windows і
+                                    зробити клацання по об'єкту – це називається глибоке виділення (deep selection).</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-05-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-05-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="80"></a>
+                                <h2>Вибираємо кілька шарів (новий спосіб)</h2>
+                                <p>Затисніть кнопку <strong>Command</strong> у MacOs або <strong>Ctrl</strong> у Windows
+                                    та клікайте на шари один за одним на панелі ліворуч. Затисніть клавішу
+                                    <strong>Shift</strong>
+                                    та об'єднайте об'єкти кліком або рамкою в робочій області. Кожне нове
+                                    виділення буде об'єднуватися з попереднім. Цей спосіб дуже зручний при
+                                    створенні груп та у комбінації з глибоким виділенням.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2024-12/0010-39.mp4" type="video/mp4"
+                                            src="pr2_files/0010-39.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="90"></a>
+                                <h2>Вибираємо діапазон шарів</h2>
+                                <p>Якщо затиснути кнопку <strong>Shift</strong> і вибрати два шари у панелі ліворуч, то
+                                    автоматично будуть вибрані й усі шари, які опинилися між ними.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-07-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-07-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="100"></a>
+                                <h2>Вибираємо перекритий шар</h2>
+                                <p>Інколи трапляються ситуації, коли шар повністю перекритий іншим і
+                                    його неможливо виділити у робочій області. Залишається тільки копатися у
+                                    панелі шарів. У такому випадку достатньо <strong>клікнути правою кнопкою
+                                        миші</strong> по області, де знаходиться невидимий шар і з випадаючого меню
+                                    обрати <strong>Select Layer,</strong> а потім клацнути по назві потрібного вам шару.
+                                </p>
+
+                                <p>Ще один варіант: затисніть <strong>Ctrl</strong> і натисніть праву
+                                    кнопку миші на область перекриття шару. Замість контекстного меню
+                                    відразу з'явиться список шарів, що значно швидше за попередній спосіб.</p>
+
+                                <p>Ці способи виділення працюють і для заблокованих шарів, але не для невидимих!</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-06-v5.mp4" type="video/mp4"
+                                            src="pr2_files/0011-06-v5.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="110"></a>
+                                <h2>Знімаємо виділення</h2>
+                                <p>Щоб зняти виділення у робочій області, натисніть <strong>Shift</strong> і клацніть по
+                                    потрібному об'єкту або скористайтеся рамкою.</p>
+
+                                <p>Щоб зняти виділення з об'єкта через панель шарів, натисніть на виділений об'єкт із
+                                    затиснутою клавішею <strong>Command</strong> у MacOs або <strong>Ctrl</strong> у
+                                    Windows.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-08-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-08-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="120"></a>
+                                <h2>Робота з шарами</h2>
+                                <p>Продовжуємо знайомитись з новими прийомами для маніпуляції шарами.
+                                    Блокування та приховування допоможуть сконцентруватися на потрібній
+                                    ділянці сторінки, а інші команди допоможуть швидше виконувати
+                                    повторюванні операції.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="130"></a>
+                                <h2>Блокування та приховування шарів</h2>
+                                <p>Іноді доводиться працювати виключно над одним елементом інтерфейсу і
+                                    випадкове виділення інших шарів лише заважає. У таких випадках корисно
+                                    заблокувати або приховати деяку частину дизайну. Для цього:</p>
+
+                                <ol>
+                                    <li>Виділіть потрібні шари;</li>
+                                    <li>Наведіть курсор на виділені об'єкти в робочій області або панелі шарів;</li>
+                                    <li>Викличте контекстне меню правою кнопкою миші;</li>
+                                    <li>Виберіть <strong>Lock/Unlock</strong>, щоб заблокувати або
+                                        <strong>Show/Hide</strong>, щоб приховати шар;</li>
+                                    <li>Якщо навести курсор на шар у панелі, то праворуч від нього з'являться іконки
+                                        дій: натисніть на <strong>замок</strong>, щоб заблокувати/розблокувати або на
+                                        <strong>око</strong>, щоб приховати/показати шар;</li>
+                                    <li>Але краще користуватися гарячими кнопками: заблокувати –
+                                        <strong>Shift+Command+L</strong> у MacOs або <strong>Shift+Control+L</strong> у
+                                        Windows; приховати – <strong>Shift+Command+H</strong> у MacOs або
+                                        <strong>Shift+Control+H</strong> у Windows;</li>
+                                    <li>Розблокування та показ прихованих шарів виконуються аналогічно, але виділяти їх
+                                        слід на панелі шарів.</li>
+                                </ol>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-10-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-10-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="140"></a>
+                                <h2>Копіювання, вирізання та вставка шару</h2>
+
+                                <p>Для копіювання об'єкта виділіть його та натисніть <strong>Command + C</strong> у
+                                    MacOs або <strong>Ctrl + C</strong> у Windows.</p>
+
+                                <p>Щоб вирізати об'єкт, виділіть його та натисніть <strong>Command + X</strong> у MacOs
+                                    або <strong>Ctrl + X</strong> у Windows.</p>
+
+                                <p>Для вставки виберіть об'єкт або зовсім приберіть виділення та натисніть
+                                    <strong>Command + V</strong> у MacOs або <strong>Ctrl + V</strong> у Windows.</p>
+
+                                <p>Копіювання, вирізання та вставка об'єктів, такі звичні по іншим
+                                    програмам команди, у деяких новачків Figma викликають здивування. Справа
+                                    у тому, що позиція, куди буде вставлений об'єкт, залежить від того,
+                                    який зараз вибраний тип об'єкта (примітив або група) і на якому рівні
+                                    вкладеності він знаходиться. Розглянемо на прикладах:</p>
+
+                                <ul>
+                                    <li>Якщо нічого не вибрати, то вставка відбудеться в тому ж місці, де знаходився
+                                        скопійований об'єкт;</li>
+
+                                    <li>Якщо вибрати групу або примітив всередині групи, то вставка відбудеться у центрі
+                                        цієї групи;</li>
+                                </ul>
+
+                                <p>
+                                    Спочатку така поведінка здається дивною, але якщо розуміти, як це
+                                    працює, то з часом ви звикнете. Перегляньте відео, зверніть увагу, який
+                                    тип об'єкта вибрано перед вставкою і як від цього змінюється позиція
+                                    вставки.</p>
+
+                                <p>Ще один важливий момент: на панелі шарів вставлений об'єкт завжди
+                                    виявляється вище або нижче обраного об'єкта (що теж дещо дивно, тому що в
+                                    інших подібних програмах вставка відбувається завжди вище вибраного
+                                    шару).</p>
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-11-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-11-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="150"></a>
+                                <h2>Вставка в позицію іншого об'єкта</h2>
+                                <p>Позицією будь-якого об'єкта Figma вважається його верхній лівий кут.
+                                    Щоб зробити позицію вставки більш передбачуваною, достатньо після
+                                    копіювання або вирізання вибрати об'єкт і натиснути <strong>Shift+Command+V</strong>
+                                    у MacOs або <strong>Shift+Ctrl+V</strong> у Windows. Новий об'єкт буде вставлено
+                                    акуратно у лівому верхньому куті виділеного шару.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-12-v4.mp4" type="video/mp4"
+                                            src="pr2_files/0011-12-v4.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="160"></a>
+                                <h2>Назви шарів</h2>
+                                <p>Навести порядок і зробити зрозумілим той хаос, який відбувається у
+                                    надрах будь-якого великого проєкту, одними групуваннями не вийде.
+                                    Знадобиться продуманна система іменування. Це займає додатковий час, але
+                                    потім заощадить нерви при пошуку потрібного шару та й
+                                    frontend-розробник скаже дякую.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="170"></a>
+                                <h2>Перейменування шарів</h2>
+                                <p>Щоб перейменувати шар треба:</p>
+
+                                <ol>
+                                    <li>Вибрати потрібний об'єкт на робочій області або панелі шарів і натиснути
+                                        <strong>Command + R</strong> у MacOs або <strong>Ctrl + R</strong> у Windows;
+                                    </li>
+                                    <li>Змінити назву шару;</li>
+                                    <li>Натиснути <strong>Enter</strong>, щоб зберегти зміни;</li>
+                                    <li>Також можна зробити подвійний клацання по назві шару на панелі, щоб увійти в
+                                        режим редагування.</li>
+                                </ol>
+
+                                <p>Щоб перейменувати групу шарів потрібно:</p>
+
+                                <ol>
+                                    <li>Вибрати кілька шарів;</li>
+                                    <li>Натиснути <strong>Command + R</strong> у MacOs або <strong>Ctrl + R</strong> у
+                                        Windows;</li>
+                                    <li>У полі <strong>Rename to</strong> вписати нову назву та натиснути
+                                        <strong>Enter</strong>.</li>
+                                </ol>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-13-v4.mp4" type="video/mp4"
+                                            src="pr2_files/0011-13-v4.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="180"></a>
+                                <h2>Задавайте змістовні назви</h2>
+                                <p>Назви повинні бути зрозумілі не тільки вам, а й розробникам, які
+                                    будуть працювати з вашим дизайном. Якщо ви працюєте із закордонною
+                                    компанією, то назви мають бути виключно англійською мовою. Якщо ви не
+                                    знаєте, як щось перекласти, використовуйте Google Translate.</p>
+
+                                <p>Назви краще задавати без пробілів, а замість них використовуйте знак
+                                    мінус або нижнє підкреслення. Справа у тому, що надалі деякі прошарки
+                                    експортуватимуться у файли ресурсів розробниками. А для них зручніше
+                                    дотримуватись саме таких правил у назвах файлів.</p>
+
+                                <p>Ось невеликий список типових назв прошарків, щоб у вас було уявлення:</p>
+
+                                <ul>
+                                    <li>Header</li>
+                                    <li>Footer</li>
+                                    <li>button_cta</li>
+                                    <li>modal-export</li>
+                                    <li>Icon_Reload</li>
+                                    <li>img_banner</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="190"></a>
+                                <h2>Імпорт зображень</h2>
+                                <p>Фотографії та ілюстрації можна використовувати не тільки як складову
+                                    частину дизайну, але і як приклади, на які варто орієнтуватися перед
+                                    початком роботи.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="200"></a>
+                                <h2>Референси та мудборди</h2>
+
+                                <p><strong>Референс, референси</strong> (від англ. reference –
+                                    рекомендація, еталон, натяк, посилання) — один або кілька прикладів
+                                    зображень, які надає замовник, щоб показати, що він хоче отримати в
+                                    результаті вашої роботи. Референс може стосуватися не всього сайту, а
+                                    лише якогось конкретного аспекту. Наприклад, буде прохання зробити
+                                    кольори як у першому референсі, структура шапки – як у другому, а
+                                    навігаційне меню мобільної версії – як у третьому. Референси
+                                    супроводжуть технічне завдання та роблять його зрозумілішим. Референсом
+                                    може бути не лише зображення, а й посилання на сайт або навіть
+                                    фото/відео.</p>
+
+                                <p><strong>Мудборд</strong> (від англ. mood board – дошка настрою) — це
+                                    добірка зображень, яку складає дизайнер, з метою показати замовнику та
+                                    отримати загальне враження на ранньому етапі, ще до початку роботи. За
+                                    допомогою таких добірок ми намагаємося зрозуміти смак клієнта, його
+                                    уподобання. Кращі екземпляри з мудборду надалі можуть використовуватися
+                                    як відправна точка для початку дизайну. Як і у випадку з референсами,
+                                    зображеннями для мудборда можуть виступати дизайни інших сайтів,
+                                    фотографії (як приклади вдалих поєднань кольорів), ілюстрації, шрифти,
+                                    набори кольорів і так далі.</p>
+
+                                <p>Для створення мудбордів існують спеціальні безкоштовні сервіси: <a
+                                        href="https://milanote.com/">Milanote</a>, <a
+                                        href="https://www.pinterest.com/">Pinterest </a>. Але не поспішайте там
+                                    реєструватись, для початку нам вистачить можливостей Figma.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p><img class="img-responsive center-block lazy loading" title="Moodboard" alt="Мудборд"
+                                        src="pr2_files/0011-14-v2.jpg"
+                                        data-ll-status="loading"></p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="210"></a>
+                                <h2>Імпорт із буфера обміну</h2>
+                                <p>Щоб працювати з референсами і створювати мудборди, нам потрібно
+                                    якимось чином вставити картинки прямо в робочу область. У Figma є кілька
+                                    механізмів для цього. Спочатку познайомимося з найпростішим із них. Щоб
+                                    вставити картинку, потрібно:</p>
+
+                                <ol>
+                                    <li>Знайти будь-яке зображення у браузері;</li>
+                                    <li>Клацнути правою кнопкою миші по ньому, щоб викликати контекстне меню;</li>
+                                    <li>Вибрати команду <strong>Copy Image</strong>, що змусить браузер скопіювати
+                                        зображення у буфер обміну;</li>
+                                    <li>Перейти назад у Figma;</li>
+                                    <li>Натиснути <strong>Command + V</strong> у MacOs або <strong>Ctrl + V</strong> у
+                                        Windows, щоб вставити зображення з буфера;</li>
+                                    <li>Зверніть увагу, що якщо зображення виявиться великим, то при його
+                                        вставці воно перекриє всю робочу область. Не варто цього лякатися,
+                                        достатньо зменшити картинку;</li>
+                                    <li>Далі із зображенням можна працювати, як із прямокутником: змінювати положення,
+                                        розміри тощо.</li>
+                                </ol>
+
+                                <p>У Figma є <strong>обмеження на вставку великих растрових зображень</strong>:
+                                    якщо ширина або висота зображення перевищує 4096 пікселів, то
+                                    вставлений об'єкт буде автоматично відмасштабований до вказаних величин.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-15-v5.mp4" type="video/mp4"
+                                            src="pr2_files/0011-15-v5.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="220"></a>
+                                <h2>Імпорт із файлу</h2>
+                                <p>Іноді графічні ресурси надсилають в архівах або файли вже знаходяться
+                                    на вашому комп'ютері. Достатньо перетягнути файл зображення на робочу
+                                    область Figma, як показано у відео. Позиція вставленого зображення
+                                    залежатиме від того, де ви відпустите ліву кнопку миші після
+                                    перетягування – центр картинки опиниться під курсором.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-16-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-16-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="230"></a>
+                                <h2>Інструмент піпетка</h2>
+                                <p><strong>Піпетка</strong> або <strong>Eyedropper Tool</strong> або <strong>Color
+                                        Picker</strong>
+                                    – дозволяє зчитати колір з будь-якого примітиву та призначити його
+                                    вибраному об'єкту. Дуже корисний для вибору кольорової гами на основі
+                                    зображень. Ми вже знаємо, як скопіювати значення кольору з одного
+                                    об'єкта та вставити його в інший. Але є і швидший спосіб.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="240"></a>
+                                <h2>Швидке привласнення кольору</h2>
+                                <p>Для швидкого копіювання кольору достатньо:</p>
+
+                                <ol>
+                                    <li>
+                                        Вибрати один або кілька об'єктів, які потрібно перефарбувати. Якщо у
+                                        нього є заливка або обведення, то її колір буде замінено. Якщо об'єкт
+                                        має і заливку, і обведення, то замінено буде лише колір заливки;
+                                    </li>
+
+                                    <li>
+                                        Натиснути кнопку <strong>I</strong> або <strong>Ctrl+C</strong>, щоб активувати
+                                        піпетку;
+                                    </li>
+
+                                    <li>
+                                        Навести курсор на точку робочої області, з якої потрібно зчитати колір.
+                                        Зверніть увагу на збільшувальне коло з піксельною сіткою у верхньому
+                                        правому кутку, яке з'являється для вашої зручності;
+                                    </li>
+
+                                    <li>
+                                        Залишилося клацнути лівою кнопкою миші для підтвердження;
+                                    </li>
+
+                                    <li>Якщо вибраний об'єкт містить колір заливки та обведення і ви хочете
+                                        змінити колір обведення за допомогою піпетки, то для цього потрібно
+                                        натиснути на колір обведення, щоб викликати вікно вибору кольору і
+                                        тільки потім викликати піпетку.</li>
+
+                                </ol>
+
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-17-v4.mp4" type="video/mp4"
+                                            src="pr2_files/0011-17-v4.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="250"></a>
+                                <h2>Привласнення кольору пікселів зображення</h2>
+                                <p>Для зчитування кольорів із зображень достатньо виконати таку ж
+                                    послідовність дій, як і в попередньому розділі. Подивіться, наскільки
+                                    швидко можна підібрати колірну гаму в такий спосіб.</p>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-19-v4.mp4" type="video/mp4"
+                                            src="pr2_files/0011-19-v4.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="260"></a>
+                                <h2>Точне позиціонування</h2>
+
+                                <p>Figma має дуже зручний інструмент для точного позиціонування, який показує відстань
+                                    між об'єктами. Щоб ним скористатися:</p>
+
+                                <ol>
+                                    <li>Виділіть об'єкт, який ви хочете точно підігнати;</li>
+                                    <li>Затисніть кнопку <strong>Option</strong> у MacOs або <strong>Alt</strong> у
+                                        Windows;</li>
+                                    <li>Підведіть курсор до іншого об'єкта, щоб побачити відстань у пікселях;</li>
+                                    <li>Одночасно змінюйте положення виділеного об'єкта за допомогою кнопок-стрілок.
+                                    </li>
+                                </ol>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2024-12/0010-40-v2.mp4" type="video/mp4"
+                                            src="pr2_files/0010-40-v2.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="270"></a>
+                                <h2>Як поділитись проєктом</h2>
+
+                                <p>Для цього у Figma є кнопка <strong>Share</strong> у верхньому правому
+                                    кутку. Інструкція:</p>
+
+                                <ol>
+                                    <li>Натисніть <strong>Share</strong>;</li>
+                                    <li>Перевірте, що в розділі <strong>Who has access (Хто має доступ)</strong> стоїть
+                                        налаштування <strong>Anyone</strong>.
+                                        Це означає, що будь-хто матиме змогу переглянути ваш файл, якщо ви
+                                        надішлете на нього посилання. Зазвичай це налаштування стоїть по
+                                        замовчуванню в драфтах;</li>
+                                    <li>Клацніть <strong>Copy link</strong>, щоб скопіювати посилання у буфер обміну;
+                                    </li>
+                                    <li>Тепер надішліть посилання людині, з якою хочете поділитися вашим
+                                        файлом. Доступ буде лише для перегляду: всі, хто перейде за посиланням,
+                                        не зможуть нічого змінити.</li>
+                                </ol>
+
+                                <br>
+
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-06/0011-20-v3.mp4" type="video/mp4"
+                                            src="pr2_files/0011-20-v3.mp4">
+                                    </video>
+                                </div>
+
+                                <br><br>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="280"></a>
+                                <h2 class="text-center">Індивідуальне завдання</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>
+                                        Імпортуйте фото пейзажу, виберіть 5 основних кольорів піпеткою та створіть палітру для подальшого використання в дизайні.
+                                    </li>
+
+                                    <li>Зайдіть на сайт <a href="https://www.behance.net/search">Behance</a>
+                                        (тут дизайнери діляться своїми роботами). <br>
+                                        Введіть у пошуковому рядку Behance запит "UI web app". Намагайтеся
+                                        знайти простенький дизайн сайту і перемалюйте його якомога детальніше,
+                                        наскільки у вас вийде (ігноруйте те, що поки не можете відтворити).
+                                        Ілюстрації та фото замініть своїми, шукайте їх на сайті <a
+                                            href="https://unsplash.com/">Unsplash</a>;
+                                    </li>                                
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Під
+                                    час виконання цих завдань використовуйте групи та гарячі клавіші.
+                                    Намагайтеся використовувати на практиці якнайбільше прийомів з цього
+                                    уроку.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                        <!--noindex-->
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div> <!-- </div class="container-fluid"> -->
+
+    </div> <!-- </div class="wrap"> -->
+    <script
+        src="pr2_files/jquery.js"></script>
+    <script
+        src="pr2_files/bootstrap.js"></script>
+    <script
+        src="pr2_files/yii.js"></script>
+    <script
+        src="pr2_files/yii.validation.js"></script>
+    <script
+        src="pr2_files/yii.activeForm.js"></script>
+    <script
+        src="pr2_files/prism.js"></script>
+    <script
+        src="pr2_files/lazyload.min.js"></script>
+    <script
+        src="pr2_files/slick-init.js"
+        0="2"></script>
+    <script
+        src="pr2_files/slick.min.js"
+        0="2"></script>
+    <script
+        src="pr2_files/dropdown-x.min.js"></script>
+    <script>jQuery(function ($) {
+            jQuery('#enroll-to-course-modal').modal({ "show": false });
+            jQuery('#take-quiz-modal').modal({ "show": false });
+
+            $('.enroll-to-course-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#enroll-to-course-modal').modal('show');
+            });
+
+            $('.take-quiz-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#course-nav-modal').modal('hide');
+                $('#take-quiz-modal').modal('show');
+            });
+
+            function processScroll(clientWindow) {
+                var stickyBlock = $('#sticky-block');
+                var scrollToTopButton = $('#scroll-to-top-btn');
+                var courseNavButton = $('#course-nav-btn');
+                var enrollButton = $('#enroll-to-course-btn-mobile');
+                var enrollButtonOffset = enrollButton.offset();
+                var windowScrollY = clientWindow.scrollTop();
+                var windowWidth = clientWindow.width();
+
+                // Show or hide scroll-to-top button depending on scroll position
+                if (windowScrollY > 100)
+                    scrollToTopButton.fadeIn();
+                else
+                    scrollToTopButton.fadeOut();
+
+                var showStickyBlock = false;
+
+                // Check if enroll button is already visible on screen
+                if (windowScrollY > (enrollButtonOffset.top + Math.round(enrollButton.outerHeight())))
+                    showStickyBlock = true;
+
+                if (showStickyBlock) {
+                    if (stickyBlock.css('display') == 'none') {
+                        courseNavButton.css('bottom', '96px');
+                        scrollToTopButton.css('bottom', '32px');
+                    }
+                    else {
+                        courseNavButton.css('bottom', 96 + stickyBlock.outerHeight() + 'px');
+                        scrollToTopButton.css('bottom', 32 + stickyBlock.outerHeight() + 'px');
+                    }
+
+                    stickyBlock.fadeIn(200);
+                }
+                else {
+                    courseNavButton.css('bottom', '96px');
+                    scrollToTopButton.css('bottom', '32px');
+                    stickyBlock.fadeOut(200);
+                }
+            }
+
+            $(document).ready(function () {
+                processScroll($(window));
+
+                $(window).scroll(function () { processScroll($(this)); });
+                $(window).resize(function () { processScroll($(this)); });
+
+            });
+            jQuery('#w0').yiiActiveForm([{ "id": "comment-author", "name": "author", "container": ".field-comment-author", "input": "#comment-author", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Вкажіть своє ім'я" }); yii.validation.string(value, messages, { "message": "Ім'я занадто довге", "max": 64, "tooLong": "Значення \"Автор\" повинно містити максимум 64 символа.", "skipOnEmpty": 1 }); } }, { "id": "comment-text", "name": "text", "container": ".field-comment-text", "input": "#comment-text", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Залиште коментар" }); yii.validation.string(value, messages, { "message": "Значення \"Текст\" має бути текстовим рядком.", "skipOnEmpty": 1 }); } }], []);
+            jQuery('#course-nav-modal').modal({ "show": false });
+            jQuery('#searchModal').modal({ "show": false });
+        });</script>
+    <script>
+        if (!localStorage.getItem("cookiesAccepted"))
+            document.querySelector('.cookie-consent').style.display = 'block';
+
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.querySelector('.cookie-consent').style.display = 'none';
+        }
+
+        jQuery.fn.hasAttr = function (name) { return this.attr(name) !== undefined; };
+
+
+
+        function processScrollForScrollToTopBtn(clientWindow) {
+            var scrollToTopBtn = $('#scroll-to-top-btn');
+            //var courseNavBtn = $('#course-nav-btn');
+
+            // var stickyBlock = $('#sticky-block'); 
+            // var buyButton = $('.product-overview button');
+            // var buyButtonOffset = buyButton.offset();
+            // var windowScrollY= clientWindow.scrollTop();
+            // var windowWidth= clientWindow.width();
+
+            //Check to see if the window is top if not then display scroll to topbutton
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    scrollToTopBtn.fadeIn();
+                }
+                else {
+                    scrollToTopBtn.fadeOut();
+                }
+            });
+        }
+
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+
+        $(document).ready(function () {
+            // Search in modal
+            $("#searchButton").click(function () {
+                $("#searchModal").modal('show');
+                $("#searchModal").on('shown.bs.modal', function () {
+                    $("#searchbar-input").focus();
+                });
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll-to-top-btn').fadeIn();
+                }
+                else {
+                    $('#scroll-to-top-btn').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            processScrollForScrollToTopBtn($(window));
+            $(window).scroll(function () { processScrollForScrollToTopBtn($(this)); });
+            $(window).resize(function () { processScrollForScrollToTopBtn($(this)); });
+
+
+            // Set course navigation position if element exists
+            var courseNav = $('#course-nav');
+            if (courseNav.length) {
+
+
+                $('#course-nav-btn').show();
+                $("#course-nav-btn").click(function (event) {
+                    event.preventDefault();
+                    $("#course-nav-modal").modal('show');
+                    $("#course-nav-modal").on('shown.bs.modal', function () {
+
+                    });
+                });
+            }
+            else {
+                $('#course-nav-btn').hide();
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>
