@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token"
+        content="y0qV12imnjlPkG8MpuzattoCVhit5Rhk50gTRHvo0lqFJKaUH-ntfD_EIHzNpZDeiUAQK_Wsfg6SAnR3K7riAg==">
+    <title>ЛР. Фрейми. Сітки. Направляючі. Компоненти.</title>
+    <meta name="description"
+        content="Фігма для новачків. Частина 3. Фрейми, проста маска, сітки та колонки, обмежувачі (constraints) – поведінка змісту при зміні кадру, сторінки та файли, організація проекту.">
+    <link
+        href="pr3_files/bootstrap.css"
+        rel="stylesheet">
+    <link
+        href="pr3_files/styles46.css"
+        rel="stylesheet">
+    <link
+        href="pr3_files/emoji-cut.css"
+        rel="stylesheet">
+    <link
+        href="pr3_files/slick.css"
+        rel="stylesheet">
+    <link
+        href="pr3_files/slick-theme.css"
+        rel="stylesheet">
+    <link
+        href="pr3_files/dropdown-x.min.css"
+        rel="stylesheet">
+
+    <link rel="alternate" hreflang="uk" href="https://frusia.pro/p/12">
+    <link rel="alternate" hreflang="en" href="https://frusia.pro/en/p/12">
+    <link rel="alternate" hreflang="ru" href="https://frusia.pro/ru/p/12">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://frusia.pro/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://frusia.pro/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://frusia.pro/favicon-16x16.png">
+    <link rel="manifest" href="https://frusia.pro/site.webmanifest">
+    <link rel="mask-icon" href="https://frusia.pro/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async=""
+        src="pr3_files/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="pr3_files/js.js"></script>
+    <script
+        src="pr3_files/901767251576442.js"
+        async=""></script>
+    <script async=""
+        src="pr3_files/fbevents.js"></script>
+    <script async=""
+        src="pr3_files/js_002.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151312573-1');
+    </script>
+
+
+    <meta name="facebook-domain-verification" content="aipds6t6j2va0hp1opvgijr91k9zt7">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '901767251576442');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=901767251576442&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+    <div class="wrap" style="">
+        <div id="wrap-content" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 main-content">
+
+                    <div class="row article-header">
+                        <div class="col-md-12">
+                            <div class="hidden-xs hidden-sm visible-md visible-lg"><img width="1140" height="512"
+                                    style="background:#DEE0D8" class="img-responsive lazy loaded"
+                                    data-src="/files/2020-07/0012-preview-horz-v3.svg" alt="Основи Figma. Частина 3"
+                                    src="pr3_files/0012-preview-horz-v3.svg"
+                                    data-ll-status="loaded"></div><br>
+                            <div class="hidden-md hidden-lg"><img width="1140" height="1140" style="background:#DEE0D8"
+                                    class="img-responsive lazy" data-src="/files/2022-04/0012-preview-square-v2.svg"
+                                    alt="Основи Figma. Частина 3"></div><br>
+                            <h1>Фрейми. Сітки. Направляючі. Компоненти</h1>
+                            <div style="width:100%;text-align:center;font-size:150%;font-weight:regular;color:#B2B5B6">
+                                Лабораторна робота
+                            </div>
+                            <div class="hidden-md hidden-lg">
+                                <p>Щоб почати навчання, проходити тести і відслідкувати прогрес, треба записать на курс.
+                                    Це безкоштовно.</p>
+                                <form method="POST" action="/p/12" accept-charset="utf-8"><input type="hidden"
+                                        name="enroll_course_id" value="1"><input type="hidden" name="_csrf"
+                                        value="y0qV12imnjlPkG8MpuzattoCVhit5Rhk50gTRHvo0lqFJKaUH-ntfD_EIHzNpZDeiUAQK_Wsfg6SAnR3K7riAg=="><button
+                                        id="enroll-to-course-btn-mobile" style="margin-top:8px"
+                                        class="button enroll-to-course-btn">Записатись на курс</button></form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li><a href="#10">Фрейми. Порівняння з групами</a></li>
+                                    <li><a href="#20">Створення фрейму. Змінюємо розмір та заливку</a></li>
+                                    <li><a href="#30">Як розмістити об'єкти всередині фрейму</a></li>
+                                    <li><a href="#40">Проста маска – обрізаємо вміст фрейму
+                                        </a></li>
+                                    <li><a href="#50">Додавання сітки</a></li>
+                                    <li><a href="#60">Додавання колонок та рядів</a></li>
+                                    <li><a href="#70">Направляючі та лінійка</a></li>
+                                    <li><a href="#80">Приклади використання фреймів</a></li>
+                                    <li><a href="#90">Поведінка вмісту фрейму при зміні розміру</a></li>
+                                    <li><a href="#100">Перше знайомство з компонентами</a></li>
+                                    <li><a href="#110">Види обмежувачів (Constraints)</a></li>
+                                    <li><a href="#120">Як підігнати розмір фрейму під вміст</a></li>
+                                    <li><a href="#140">Сторінки та файли</a></li>
+                                    <li><a href="#150">Організація сторінок</a></li>
+                                    <li><a href="#160">Ієрархія проекту</a></li>
+                                    <li><a href="#170">Домашнє завдання</a></li>
+                                    <li><a href="#180">Висновки</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="10"></a>
+                                <h2>Фрейми. Порівняння з групами</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p><strong>Фрейми</strong> в інших програмах називаються <strong>артбордами</strong>
+                                    (artboard). Але у Figma пішли своїм шляхом і вигадали унікальну назву. І
+                                    цілком резонно, тому що фрейми мають більші можливості та гнучкість,
+                                    ніж артборди, наприклад у Sketch неможливо помістити один артборд
+                                    усередині іншого.</p>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p><strong>Frame</strong>
+                                    з англійської перекладається як рамка, каркас, скелет. Якщо спростити,
+                                    то фрейми можна порівняти з полотном художника або робочою областю.
+                                    Зазвичай фрейм (артборд) містить дизайн однієї сторінки у певному
+                                    розмірі. Наприклад, дизайнер може розмістити поруч кілька фреймів з
+                                    однією сторінкою для екрана ноутбука, планшета і смартфона.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>
+                                    Групи дозволяють об'єднувати примітиви та створювати логічні одиниці
+                                    всередині фрейму, значно полегшуючи роботу з проектом. Фрейми схожі на
+                                    групи, але мають ряд унікальних можливостей:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li>Фрейм <strong>має розмір і може мати заливку кольором</strong>. У
+                                        групах розмір визначається автоматично, на основі розміру всіх об'єктів,
+                                        що знаходяться всередині. Ця відмінність дозволяє експортувати
+                                        зображення з відступами з обох боків, що корисно при збереженні іконок. У
+                                        налаштуваннях фрейму можна знайти великий список шаблонів розмірів від
+                                        усіляких екранів пристроїв (популярних смартфонів, розумних годинників і
+                                        планшетів) і навіть до історії Instagram або посту Facebook;
+                                    </li>
+
+                                    <li><strong>Кожен фрейм має свою систему координат.</strong> Координати об'єктів
+                                        усередині будуть відраховуватися щодо верхнього лівого краю межі фрейму;</li>
+
+                                    <li>Фрейм <strong>може обрізати свій вміст, який виходить за його межі його
+                                            рамок.</strong> Тобто все, що знаходиться поза фремом, буде ховатися, якщо
+                                        опція <strong>Clip content</strong> увімкнена. Така можливість називається
+                                        <strong>маскою;</strong>
+                                    </li>
+
+                                    <li>Фрейм може <strong>відображати розмітку макета</strong>, а саме
+                                        сітку, вертикальні та горизонтальні колонки, а також включати в себе
+                                        направляючі. Ці інструменти призначені для точного розташування та
+                                        вирівнювання об'єктів макета;
+                                    </li>
+
+                                    <li><strong>При зміні розмірів фрейму можна вказати, як поводитимуть себе
+                                            об'єкти.</strong> Наприклад, кнопка може прилипнути до верхньої частини
+                                        екрана і розтягуватися по ширині. Ця можливість називається
+                                        <strong>обмежувачами</strong> (constraints).
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">Зараз ми розглянемо та навчимося користуватися кожною з перерахованих
+                                функцій.<p></p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="20"></a>
+                                <h2>Створення фрейму. Змінюємо розмір та заливку</h2>
+
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Процес
+                                    створення фрейму нічим не відрізняється від прямокутника. Крім того, що
+                                    вам потрібно вибрати інструмент із зображенням решітки або натиснути
+                                    <strong>F</strong>. Далі затискаємо ліву кнопку на робочій області та тягнемо мишку.
+                                    Відпускаємо ліву кнопку мишки, щоб встановити розміри.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Далі
+                                    найцікавіше. У правій панелі, подібно до прямокутника вже буде заданий
+                                    колір заливки фону (розділ Fill). Ви можете змінювати розмір кадру
+                                    старими способами, потягнувши за край або поставивши точний розмір у
+                                    полях <strong>W</strong> (Width) та <strong>H</strong> (Height). Але тепер у нас є
+                                    нове меню, що випадає, з шаблонами розмірів у лівому верхньому куті панелі
+                                    властивостей – <strong>Frame</strong>. Перегляньте, які шаблони там є і спробуйте
+                                    застосувати хоча б кілька з них.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-01-v4.mp4" type="video/mp4"
+                                            src="pr3_files/0012-01-v4.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="30"></a>
+                                <h2>Як розмістити об'єкти всередині фрейму</h2>
+                                <p>Є кілька простих способів:</p>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li>Виділити та перетягнути всі об'єкти всередину меж фрейму;</li>
+                                    <li>Виділити, вирізати потрібні об'єкти (Command + X на macOs або Ctrl +
+                                        X на Windows) і вставити (Command + V на macOs або Ctrl + V на Windows)
+                                        після того, як виділили фрейм.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Після
+                                    цих маніпуляцій об'єкти будуть всередині фрейму, що буде видно по
+                                    панелі шарів, адже вставлені об'єкти будуть відображатися зі зміщенням
+                                    (як і в групах). Спробуйте виділити об'єкт усередині фрейму, зверніть
+                                    увагу на значення координат <strong>X</strong> та <strong>Y</strong> – вони
+                                    змінилися, адже тепер верхній лівий кут кадру – це новий початок координат.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-02-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-02-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="40"></a>
+                                <h2>Проста маска – обрізаємо вміст фрейму</h2>
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Використовуючи опцію <strong>Clip content</strong>
+                                    на панелі властивостей, можна обрізати вміст фрейму по його прямокутній
+                                    межі, яка залежить від ширини (параметр W – Width) і висоти кадру
+                                    (параметр H – height). Такий прийом називається <strong>маскою</strong>.
+                                    Таким чином, можна приховати частину об'єктів використовуючи форму
+                                    іншого об'єкта, в нашому випадку це фрейм і прямокутна форма. Ось вам
+                                    аналогія: вирізавши квадратний отвір у папері та наклавши її на
+                                    фотографію ви отримаєте приклад використання маски у реальному світі.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-03-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-03-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="50"></a>
+                                <h2>Додавання сітки</h2>
+
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Фрейми
+                                    дозволяють відображати допоміжні сітки, які можна гнучко налаштовувати
+                                    для полегшення вирівнювання та позиціонування об'єктів. Для цього:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Виділяємо фрейм;</li>
+                                    <li>Клікаємо по <strong>плюсику +</strong> навпроти розділу <strong>Layout
+                                            Grid</strong> – відобразиться сітка зі стандартними налаштуваннями червоного
+                                        кольору з кроком 10 пікселів;</li>
+                                    <li>Натискаємо на іконку ліворуч від напису <strong>Grid (10px)</strong>, щоб
+                                        налаштувати сітку. У вікні, що випадає, можемо задати крок сітки (Size), колір
+                                        ліній (Color) і прозорість;</li>
+                                    <li>Сітку можна тимчасово приховати або видалити, натиснувши <strong>іконку
+                                            ока</strong> або <strong>мінус</strong> відповідно праворуч;</li>
+                                    <li>Можна додати кілька сіток різних кольорів усередині одного фрейму за потреби.
+                                    </li>
+                                    <li>Щоб тимчасово приховати сітки на всіх кадрах, натисніть <strong>Ctrl +
+                                            G.</strong> Повторіть комбінацію клавіш, щоб показати їх знову.</li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-04-v4.mp4" type="video/mp4"
+                                            src="pr3_files/0012-04-v4.mp4">
+                                    </video>
+                                </div>
+
+                                <br>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Сітку
+                                    можна використовувати як помічник для малювання форм, банерів,
+                                    ілюстрацій. Її головна перевага полягає в тому, що при переміщенні
+                                    об'єктів вони як би "приклеюються" до ліній сітки, тим самим допомагаючи
+                                    вам встановити об'єкт у потрібній позиції. З масштабуванням така ж
+                                    історія – межі об'єкта прилипають до направляючих сітки.</p>
+
+                                <p>Загалом сітки використовуються досить рідко. А ось колонки, про які йтиметься далі –
+                                    постійно.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="60"></a>
+                                <h2>Додавання колонок та рядів</h2>
+
+
+
+
+
+
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Вертикальні колонки часто використовуються в дизайні веб-сторінки. Їх налаштування
+                                    трохи складніше сітки:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Виділяємо фрейм;</li>
+                                    <li>Клікаємо по <strong>плюсику +</strong> навпроти розділу <strong>Layout
+                                            Grid</strong> – відобразиться така сама стандартна сітка;</li>
+                                    <li>Натискаємо на іконку ліворуч від напису <strong>Grid (10px)</strong>. У вікні,
+                                        що випадає, натискаємо на <strong>Grid</strong> у лівому верхньому кутку;</li>
+
+                                    <li>
+                                        <p>У меню, що випадає, вибираємо <strong>Columns.</strong> Відразу після цього
+                                            крім кольору та прозорості з'явиться ряд нових параметрів:</p>
+                                        <p>
+
+                                        </p>
+                                        <ul>
+
+                                            <li><strong>Count</strong> – кількість колонок;</li>
+
+                                            <li><strong>Type</strong> – тип побудови колонок. Можна обрати одну з опцій:
+                                                <strong>Left</strong> – колонки розміщуються по лівому краю,
+                                                <strong>Right</strong> – праворуч, <strong>Center</strong> –
+                                                вирівнюються по центру, <strong>Stretch</strong> – розтягуються по всій
+                                                ширині кадру;</li>
+
+                                            <li><strong>Width</strong> – ширина колонки у пікселях. Цей параметр
+                                                прораховується автоматично, якщо тип колонок виставлений у Stretch;</li>
+
+                                            <li><strong>Offset</strong> – відступ зліва якщо тип колонок виставлений
+                                                у Left. Для типу колонок Right це відступ праворуч. Для типу Stretch це
+                                                відступ з обох боків. Цей параметр автоматично прораховується для типу
+                                                колонок Center;</li>
+
+                                            <li><strong>Gutter</strong> – відстань між колонками.</li>
+
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Давайте налаштуємо одну популярну сітку з фреймворку <strong>Bootstrap</strong>,
+                                    яку часто використовують розробники під час верстки веб-сторінок. Для
+                                    цього нам знадобиться фрейм шириною в 1440 пікселів і висотою в 900
+                                    пікселів, що відповідає розмірам екрану типового ноутбука. Сама сітка
+                                    завширшки становить 1140 пікселів і складається з 12 колонок. Ширина
+                                    кожної колонки – 65 пікселів, а відстань між ними – 30 пікселів.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-05-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-05-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+
+                                <p>Подібно сітці об'єкти будуть прилипати до меж колонки, що дуже зручно
+                                    для швидкого вибудовування примітивів в одну лінію та їх вирівнювання в
+                                    блоках.</p>
+
+                                <p>Крім колонок є можливість задавати ряди. Для цього достатньо вибрати
+                                    <strong>Rows</strong>
+                                    у меню, що випадає. Усі параметри ідентичні колонкам, лише Width
+                                    (ширина) замінено Height (висота). Мені не доводилося використовувати
+                                    цей вид сітки, але, можливо, в окремих випадках він може бути корисним.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="70"></a>
+                                <h2>Направляючі та лінійка</h2>
+                                <p>Усілякі види сіток полегшують роботу дизайнера, але існує ще корисніший інструмент –
+                                    <strong>направляючі</strong>.
+                                    Це вертикальна чи горизонтальна лінія, яку дизайнер може виставити у
+                                    довільному місці. Таких ліній може бути багато і ви можете відтворити
+                                    будь-яку сітку, використовуючи лише направляючі. До цих ліній
+                                    прилипатимуть об'єкти, як і до сіток. Щоб створити напрямну:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+
+                                    <li>Виділяємо фрейм, якщо вам потрібна лінія саме всередині фрейму;</li>
+
+                                    <li>Включаємо лінійку за допомогою комбінації клавіш <strong>Shift + R.</strong>
+                                        Вона з'являється зверху та ліворуч по краях робочої області та показує
+                                        межі виділених об'єктів у пікселях. Запам'ятайте, що направляючі
+                                        відображаються лише з увімкненою лінійкою;</li>
+
+
+                                    <li>Клікаємо та затискаємо ліву кнопку миші всередині верхньої або лівої
+                                        лінійки, щоб створити горизонтальну або вертикальну направляючу
+                                        відповідно;</li>
+
+                                    <li>Тягнемо курсор до центру екрана. Як тільки ви вийдете за межі
+                                        лінійки на робочій області, з'явиться направляюча. Тягніть її в потрібну
+                                        вам точку;</li>
+
+                                    <li>Відпускаємо ліву кнопку миші, щоб зафіксувати позицію направляючої;</li>
+
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Щоб змінити положення направляючої, перетягніть її на нову позицію.
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Щоб
+                                    видалити направляючу, потрібно її виділити, клацнувши по ній. Виділена
+                                    лінія забарвиться у синій колір. Далі натискаємо кнопку <strong>Delete</strong> на
+                                    клавіатурі. Також можна просто перетягнути направляючу область лінійки і вона теж
+                                    буде видалена.
+                                </p>
+
+                                <p>Щоб тимчасово приховати всі направляючі, приховайте лінійку за допомогою клавіш
+                                    <strong>Shift + R</strong>.</p>
+
+
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-06-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-06-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+
+                                <p>А тепер важливий момент. Як ви пам'ятаєте, попередньо виділивши будь-який об'єкт і затиснувши
+                                    кнопку <strong>Option</strong> у MacOs або <strong>Alt</strong>
+                                    у Windows можна побачити точну відстань у пікселях, підвівши курсор до
+                                    іншого об'єкта. Так от цей же прийом працює і для направляючих, що буває
+                                    дуже доречним. Давайте подивимося, як це виглядає на практиці
+                                    (приклеювання об'єктів до направляючих та підказки про відстань до них):</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-07-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-07-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="80"></a>
+                                <h2>Приклади використання фреймів</h2>
+                                <p>На цьому перелік можливостей фреймів не закінчується, але перш ніж
+                                    продовжити, давайте подивимося кілька типових прикладів їх використання.
+                                    Отже, фрейми часто використовуються як контейнери для:</p>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li>Дизайну веб-сторінок різних пристроїв (настільний пк, ноутбук, смартфон);</li>
+                                    <li>Дизайну екранів мобільних додатків для планшетів, смартфонів, розумного
+                                        годинника;</li>
+                                    <li>Набору базових кольорів;</li>
+                                    <li>Набору компонентів інтерфейсу (кнопки, перемикачі, іконки, слайдери, картки,
+                                        шапка, підвал сайту тощо);</li>
+                                    <li>Набору шрифтів (різні накреслення та розміри);</li>
+                                    <li>Матеріалів соціальних мереж (сторі, пости, банери, ілюстрації, інфографіка).
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-08-v7.mp4" type="video/mp4"
+                                            src="pr3_files/0012-08-v7.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="90"></a>
+                                <h2>Поведінка вмісту фрейму при зміні розміру</h2>
+                                <p>Якщо об'єкт знаходиться всередині фрейму, ви можете вказати, як йому
+                                    поводитися при зміні розмірів фрейму. Ця можливість називається
+                                    <strong>constraint</strong> (читається <i>констрейнт</i>), що перекладається як
+                                    обмежувач. Він задає поведінку при зміні розміру фрейму:</p>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li>Дозволяє закріпити позицію об'єкта по вертикальній або
+                                        горизонтальній стороні фрейму. У такому разі при розтягуванні фрейму він
+                                        збереже свій розмір;</li>
+                                    <li>Або розтягне об'єкт за шириною та/або висотою фрейму.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Буде
+                                    простіше зрозуміти на прикладі. Подивіться на два квадрати внизу.
+                                    Фігура ліворуч розміщена у фреймі. Фігура праворуч знаходиться у групі
+                                    разом з бежевим прямокутником, який слугує фоном. Спробуємо по черзі
+                                    змінити розмір фрейму та групи. Зверніть увагу, що ліворуч квадрат
+                                    зберігає розмір і приклеюється до нижньої сторони фрейму відповідно до
+                                    вибраного обмеження. При виділенні з'являються пунктирні лінії, які
+                                    вказують на які обмежувачі активні. Праворуч при виділенні квадрата
+                                    жодних допоміжних ліній не показується, всі складові групи розтягуються.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-09-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-09-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+                                <p>Виникає резонне питання: навіщо ця можливість потрібна? Адже можна
+                                    зробити кілька кадрів різних розмірів екранів для однієї і тієї ж
+                                    сторінки і таким чином показати, як поводитиметься вміст. Користь цієї
+                                    функції в повній мірі проявляється при використанні компонентів.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="100"></a>
+                                <h2>Перше знайомство з компонентами</h2>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p><strong>Компоненти</strong>
+                                    – це спеціальний вид об'єктів, які створюються на основі фреймів для
+                                    побудови елементів інтерфейсу, що часто використовуються. Звучить
+                                    складно, але насправді за допомогою компонентів створюють шаблони
+                                    кнопок, випадаючих меню, навігації та іншого. Щоб надалі не малювати
+                                    кожного разу, наприклад, кнопку, ви копіюєте компонент кнопки,
+                                    виставляєте потрібний розмір та колір, змінюєте текст – і все готово!
+                                    Набори таких компонентів у термінології Figma називаються <strong>бібліотекою
+                                        компонентів</strong>. А у дизайнерів вони називаються <strong>UI Kit</strong>
+                                    (читається <i>юай кіт</i>).</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p><strong>Навіщо ж так все ускладнювати?</strong>
+                                    Насправді компоненти здатні заощадити десятки годин роботи. Уявіть собі
+                                    ситуацію: у вас є 50 екранів веб-програми. На кожному є кнопки. Раптом
+                                    вам прилітає правка "заокруглити всі кнопки". Якщо дизайн створювався за
+                                    допомогою компонентів, то вам достатньо змінити лише батьківський
+                                    компонент (шаблон кнопки), а решта змін відбудуться автоматично. Якщо
+                                    все робилося без компонентів, то вам доведеться вручну змінити кожну
+                                    кнопку.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>У цьому й полягає вся міць компонентів. А обмежувачі (Constraints) грають тут одну із
+                                    ключових ролей.</p>
+
+                                <p><strong>Компонентам у нас буде присвячений окремий матеріал</strong>,
+                                    не варто лякатися їхньої складності. Більше того, у компонентів є й
+                                    інші особливості, які ми поступово зачіпатимемо. Наразі ми лише готуємо
+                                    фундамент для подальшої роботи. А поки що, щоб зрозуміти користь
+                                    компонентів, подивіться на приклад нижче. Зверху знаходиться
+                                    батьківський компонент (шаблон), а внизу три дочірніх компоненти, які
+                                    успадковують його властивості. У самому низу знаходиться кнопка,
+                                    зроблена на основі звичайного фрейму. Змінюючи батьківський компонент,
+                                    ми автоматично змінюємо всіх дочірні.</p>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-10-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-10-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+                                <p>Як бачите, нижня кнопка залишилася недоторканою, тому що це просто
+                                    фрейм, а не компонент. Сподіваюся у вас вже склалося перше враження про
+                                    компоненти та їхню користь у роботі дизайнера.</p>
+
+                                <p>Поки ви не вмієте створювати компоненти, тому що потрібно спочатку
+                                    повністю зрозуміти, як працюють обмежувачі всередині фрейму. Тому
+                                    повертаємось до них.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="110"></a>
+                                <h2>Види обмежувачів (Constraints)</h2>
+
+                                <p>Давайте створимо кілька кнопок усередині фреймів з різними налаштуваннями
+                                    обмежувачів. Розглянемо найпростіші з них:</p>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li>
+                                        <p>Вертикальні обмежувачі:</p>
+
+                                        <ul>
+                                            <li><strong>Top</strong> – об'єкт прилипає до верхнього краю фрейму;</li>
+                                            <li><strong>Center</strong> – об'єкт центрується за висотою фрейму;</li>
+                                            <li><strong>Bottom</strong> – об'єкт прилипає до нижнього краю фрейму.</li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li style="margin-top:20px">
+                                        <p>Горизонтальні обмежувачі:</p>
+
+                                        <ul>
+                                            <li><strong>Left</strong> – об'єкт прилипає до лівого краю фрейму;</li>
+                                            <li><strong>Center</strong> – об'єкт центрується за шириною фрейму;</li>
+                                            <li><strong>Right</strong> – об'єкт прилипає до правого краю фрейму.</li>
+                                        </ul>
+
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Подивіться, як поводяться об'єкти всередині фреймів під
+                                    час масштабування.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-11-v8.mp4" type="video/mp4"
+                                            src="pr3_files/0012-11-v8.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+                                <p>Існує ще кілька видів обмежувачів:</p>
+                                <ul>
+                                    <li><strong>Left &amp; Right</strong> – вид горизонтального обмежувача.
+                                        Примушує лівий край об'єкта прилипнути до лівого боку фрейму, а правий
+                                        край – до правої сторони фрейму. Дозволяє розтягувати об'єкт по ширині з
+                                        фіксованими відступами ліворуч і праворуч;</li>
+                                    <li><strong>Top &amp; Bottom</strong> – вид вертикального обмежувача.
+                                        Примушує верхню грань об'єкта прилипнути до верхнього боку фрейму, а
+                                        нижню грань – до нижньої сторони фрейму. Дозволяє розтягувати об'єкт по
+                                        висоті з фіксованими відступами зверху та знизу;</li>
+                                    <li><strong>Scale</strong> – об'єкт розтягується пропорційно фрейму по
+                                        ширині та/або висоті. У цьому випадку відступи до фрейму не фіксуються, а
+                                        змінюватимуться пропорційно до його розміру.</li>
+                                </ul>
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-12-v4.mp4" type="video/mp4"
+                                            src="pr3_files/0012-12-v4.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+                                <p>Поекспериментуйте з різними комбінаціями обмежень і переконайтеся, що
+                                    ви розумієте, як вони працюють. </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="120"></a>
+                                <h2>Як підігнати розмір фрейму під вміст</h2>
+                                <p>Якщо потрібно обрізати фрейм рівно за межами його об'єктів, достатньо натиснути
+                                    відповідну кнопку в панелі властивостей:</p>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-13-v5.mp4" type="video/mp4"
+                                            src="pr3_files/0012-13-v5.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="140"></a>
+                                <h2>Сторінки та файли</h2>
+                                <p>Крім фреймів у Figma існують структурні одиниці вищого порядку:</p>
+
+                                <ul>
+                                    <li><strong>Сторінки</strong> – містять фрейми всередині себе;</li>
+                                    <li><strong>Файли</strong> – складаються зі сторінок;</li>
+                                </ul>
+
+                                <p>Весь цей час ми працювали всередині єдиної сторінки одного файлу. Щоб створити нову
+                                    сторінку:</p>
+
+                                <ul>
+                                    <li>Клікаємо на назву поточної сторінки <strong>Page 1</strong> у верхньому правому
+                                        куті лівої панелі, щоб показати список усіх сторінок;</li>
+                                    <li>Клікаємо на <strong>плюс +</strong>, щоб створити нову сторінку;</li>
+
+                                    <li>Вводимо назву нової сторінки;</li>
+
+                                    <li>Натискаємо <strong>Enter</strong>, щоб зберегти назву.</li>
+                                </ul>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Тепер
+                                    можна працювати з новою сторінкою, перейти на іншу сторінку, клікнувши
+                                    на назву або приховати панель сторінок, клікнувши на назву вибраної
+                                    сторінки у верхньому правому куті лівої панелі. Крім того, натиснувши
+                                    правою кнопкою миші на назву сторінки, можна:</p>
+
+
+                                <ul>
+                                    <li><strong>Copy Link to Page</strong> – скопіювати посилання на сторінку в буфер
+                                        обміну, щоб поділитися;</li>
+                                    <li><strong>Duplicate Page</strong> – зробити копію;</li>
+                                    <li><strong>Delete Page</strong> – видалити. Ця команда доступна тільки якщо у вас є
+                                        хоча б дві сторінки;</li>
+                                    <li><strong>Rename Page</strong> – перейменувати сторінку. Як і із шарами, працює
+                                        подвійний клік.</li>
+                                </ul>
+
+                                <p>Подивимось, як виглядає робота зі сторінками на практиці:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-15-v3.mp4" type="video/mp4"
+                                            src="pr3_files/0012-15-v3.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+                                <p>Не забувайте давати своїм файлам назви із сенсом. Щоб переіменувати
+                                    ваш файл достатньо клікнути один раз на його назві у лівому верхньому
+                                    кутку.</p>
+
+                                <p>Щоб вибрати інший файл або побачити інші, достатньо назад перейти до списку файлів у
+                                    розділі <strong>Drafts</strong> і вибрати файл, що цікавить, у правій панелі.</p>
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2020-10/0012-16-v6.mp4" type="video/mp4"
+                                            src="pr3_files/0012-16-v6.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="150"></a>
+                                <h2>Організація сторінок</h2>
+                                <p>Давайте подивимося, з чого складається типовий проект. На початку це єдина
+                                    <strong>Page 1</strong>, але в міру розростання з'являються сторінки з такими
+                                    назвами:</p>
+
+
+
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+
+                                    <li><strong>User flow name</strong> – назва користувач флоу/сценарія.
+                                        Тобто, кожен окремий сценарій розміщується на окремій сторінці. У деяких
+                                        випадках можна розмістити кілька сценаріїв на одній сторінці, якщо вони
+                                        схожі (наприклад, сценарії реєстрації, скидання пароля, входу на сайт);</li>
+
+                                    <li><strong>References/Moodboards</strong> – референси від клієнта та створені на їх
+                                        основі мудборди. Також тут може бути інформація по проекту;</li>
+
+                                    <li><strong>Thumbnail</strong> – сторінка з обкладинкою проекту, яка
+                                        відображається на превью в розділі Drafts/Recent. Щоб її застосувати
+                                        потрібно створити фрейм розміром в 1920х960 пікселів, відмалювати саму
+                                        обкладинку і у випадаючому меню з правого кліку на кадрі вибрати <strong>Use as
+                                            Thumbnail</strong>;</li>
+
+                                    <li><strong>Components</strong> – сторінка із компонентами, що ви
+                                        використовуєте. Часто доводиться імпортувати цілі бібліотеки
+                                        компонентів, у такому разі пишеться назва бібліотеки та її версія.
+                                        Наприклад, Ant Design UI Kit (1.2) (ant.design v4 update) (Light Theme);</li>
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><br>
+
+                                <p>У кожного дизайнера свої правила та звички іменування та
+                                    структурування сторінок, строгих догм тут немає. Інший приклад: створюють сторінку UI з
+                                    купою екранів (фреймів) фінального дизайну та UX – для всіх
+                                    вайрфреймів.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="160"></a>
+                                <h2>Ієрархія проєкту</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Зазвичай вистачає одного файлу, але на великих проектах іноді окремі файли
+                                    розподіляють дизайн по платформах. Наприклад: <strong>Web, Mobile, Desktop.</strong>
+                                    Іноді в окремий файл виносять бібліотеку компонентів, але врахуйте, що вам
+                                    знадобиться платна підписка.</p>
+
+                                <p>Для новачка буде достатньо одного файлу на проект. З досвідом у
+                                    якийсь момент ви самі зрозумієте, що вам тісно і копання в десятках
+                                    сторінок забирає багато часу. Або захочете використовувати більш
+                                    розширений функціонал Figma.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="170"></a>
+                                <h2>Домашнє завдання</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Оберіть сайт на свій розсуд і намалюйте його шапку (хедер),
+                                        підвал (футер) або будь-яку іншу його частину з використанням
+                                        обмежувачів (Constraints). Ваше завдання налаштувати вміст фрейму таким
+                                        чином, щоб частина елементів прилипала до лівої сторони, а інша частина
+                                        до правої. Наприклад, логотип може використовувати обмежувачі Top та
+                                        Left. Правильно виконане завдання має містити фрейм для кожної частини
+                                        сайту (окремий фрейм для хедера, окремий фрейм для футера і так далі). А
+                                        вже всі ці фрейми повинні знаходитися всередині ще одного фрейму
+                                        (дизайну сайту);<p></p>
+
+                                    </li>
+                                    <li>Створіть 9 кнопок і налаштуйте обмежувачі таким чином, щоб вони повторювали
+                                        поведінку, як на першому відео у розділі <a
+                                            href="https://frusia.pro/p/12#110">Види обмежувачів (Constraints)</a>
+                                        цього уроку. Щоб перевірити, виділіть усі 9 фреймів і змінюйте розмір,
+                                        як на відео. Використайте комбінації обмежувачів включаючи top, center,
+                                        bottom, left, right. Кожна кнопка повинна являти собою окремий фрейм та
+                                        містити як мінімум заливку та текст;</li>
+
+                                    <li>Намалюйте форму зворотного зв'язку. Там мають бути поля «Ім'я»,
+                                        «Email», «Повідомлення» та кнопка «Надіслати». Поля повинні тягнутися
+                                        разом із формою, коли ми змінюємо її ширину. Підказка: знадобиться
+                                        обмеження Left and right. Форма зворотного зв'язку має знаходитись в
+                                        окремому фреймі.<p></p>
+                                    </li>
+
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                        <!--noindex-->
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div> <!-- </div class="container-fluid"> -->
+        <a href="#" id="scroll-to-top-btn" class="rounded-btn" style="bottom: 32px; display: inline;">
+            <span style="font-weight:normal; font-size:1rem; line-height:1;">UP</span></a>
+
+    </div> <!-- </div class="wrap"> -->
+    <script
+        src="pr3_files/jquery.js"></script>
+    <script
+        src="pr3_files/bootstrap.js"></script>
+    <script
+        src="pr3_files/yii.js"></script>
+    <script
+        src="pr3_files/yii.validation.js"></script>
+    <script
+        src="pr3_files/yii.activeForm.js"></script>
+    <script
+        src="pr3_files/prism.js"></script>
+    <script
+        src="pr3_files/lazyload.min.js"></script>
+    <script
+        src="pr3_files/slick-init.js"
+        0="2"></script>
+    <script
+        src="pr3_files/slick.min.js"
+        0="2"></script>
+    <script
+        src="pr3_files/dropdown-x.min.js"></script>
+    <script>jQuery(function ($) {
+            jQuery('#enroll-to-course-modal').modal({ "show": false });
+            jQuery('#take-quiz-modal').modal({ "show": false });
+
+            $('.enroll-to-course-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#enroll-to-course-modal').modal('show');
+            });
+
+            $('.take-quiz-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#course-nav-modal').modal('hide');
+                $('#take-quiz-modal').modal('show');
+            });
+
+            function processScroll(clientWindow) {
+                var stickyBlock = $('#sticky-block');
+                var scrollToTopButton = $('#scroll-to-top-btn');
+                var courseNavButton = $('#course-nav-btn');
+                var enrollButton = $('#enroll-to-course-btn-mobile');
+                var enrollButtonOffset = enrollButton.offset();
+                var windowScrollY = clientWindow.scrollTop();
+                var windowWidth = clientWindow.width();
+
+                // Show or hide scroll-to-top button depending on scroll position
+                if (windowScrollY > 100)
+                    scrollToTopButton.fadeIn();
+                else
+                    scrollToTopButton.fadeOut();
+
+                var showStickyBlock = false;
+
+                // Check if enroll button is already visible on screen
+                if (windowScrollY > (enrollButtonOffset.top + Math.round(enrollButton.outerHeight())))
+                    showStickyBlock = true;
+
+                if (showStickyBlock) {
+                    if (stickyBlock.css('display') == 'none') {
+                        courseNavButton.css('bottom', '96px');
+                        scrollToTopButton.css('bottom', '32px');
+                    }
+                    else {
+                        courseNavButton.css('bottom', 96 + stickyBlock.outerHeight() + 'px');
+                        scrollToTopButton.css('bottom', 32 + stickyBlock.outerHeight() + 'px');
+                    }
+
+                    stickyBlock.fadeIn(200);
+                }
+                else {
+                    courseNavButton.css('bottom', '96px');
+                    scrollToTopButton.css('bottom', '32px');
+                    stickyBlock.fadeOut(200);
+                }
+            }
+
+            $(document).ready(function () {
+                processScroll($(window));
+
+                $(window).scroll(function () { processScroll($(this)); });
+                $(window).resize(function () { processScroll($(this)); });
+
+            });
+            jQuery('#w0').yiiActiveForm([{ "id": "comment-author", "name": "author", "container": ".field-comment-author", "input": "#comment-author", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Вкажіть своє ім'я" }); yii.validation.string(value, messages, { "message": "Ім'я занадто довге", "max": 64, "tooLong": "Значення \"Автор\" повинно містити максимум 64 символа.", "skipOnEmpty": 1 }); } }, { "id": "comment-text", "name": "text", "container": ".field-comment-text", "input": "#comment-text", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Залиште коментар" }); yii.validation.string(value, messages, { "message": "Значення \"Текст\" має бути текстовим рядком.", "skipOnEmpty": 1 }); } }], []);
+            jQuery('#course-nav-modal').modal({ "show": false });
+            jQuery('#searchModal').modal({ "show": false });
+        });</script>
+    <script>
+        if (!localStorage.getItem("cookiesAccepted"))
+            document.querySelector('.cookie-consent').style.display = 'block';
+
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.querySelector('.cookie-consent').style.display = 'none';
+        }
+
+        jQuery.fn.hasAttr = function (name) { return this.attr(name) !== undefined; };
+
+
+
+        function processScrollForScrollToTopBtn(clientWindow) {
+            var scrollToTopBtn = $('#scroll-to-top-btn');
+            //var courseNavBtn = $('#course-nav-btn');
+
+            // var stickyBlock = $('#sticky-block'); 
+            // var buyButton = $('.product-overview button');
+            // var buyButtonOffset = buyButton.offset();
+            // var windowScrollY= clientWindow.scrollTop();
+            // var windowWidth= clientWindow.width();
+
+            //Check to see if the window is top if not then display scroll to topbutton
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    scrollToTopBtn.fadeIn();
+                }
+                else {
+                    scrollToTopBtn.fadeOut();
+                }
+            });
+        }
+
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+
+        $(document).ready(function () {
+            // Search in modal
+            $("#searchButton").click(function () {
+                $("#searchModal").modal('show');
+                $("#searchModal").on('shown.bs.modal', function () {
+                    $("#searchbar-input").focus();
+                });
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll-to-top-btn').fadeIn();
+                }
+                else {
+                    $('#scroll-to-top-btn').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            processScrollForScrollToTopBtn($(window));
+            $(window).scroll(function () { processScrollForScrollToTopBtn($(this)); });
+            $(window).resize(function () { processScrollForScrollToTopBtn($(this)); });
+
+
+            // Set course navigation position if element exists
+            var courseNav = $('#course-nav');
+            if (courseNav.length) {
+
+
+                $('#course-nav-btn').show();
+                $("#course-nav-btn").click(function (event) {
+                    event.preventDefault();
+                    $("#course-nav-modal").modal('show');
+                    $("#course-nav-modal").on('shown.bs.modal', function () {
+
+                    });
+                });
+            }
+            else {
+                $('#course-nav-btn').hide();
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>

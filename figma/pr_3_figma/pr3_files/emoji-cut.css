@@ -1,0 +1,34 @@
+.ec {
+    font-family: monospace;
+    color: #000;
+}
+.ec-fire:before {
+    content: "🔥";
+}
+.ec-white-check-mark:before {
+    content: "✅";
+}
+.ec-muscle:before {
+    content: "💪";
+}
+.ec-briefcase:before {
+    content: "💼";
+}
+.ec-speech-balloon:before {
+    content: "💬";
+}
+.ec-blush:before {
+    content: "😊";
+}
+.ec-wave:before {
+    content: "👋";
+}
+.ec-point-right:before {
+    content: "👉";
+}
+.ec-nerd-face:before {
+    content: "🤓";
+}
+.ec-point-down:before {
+    content: "👇";
+}
