@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token"
+        content="5qRvYgsZxhDO_6hfEf7saR6RnUWYoGKALd-ndtbL2dSw3Dg0byyXVIuryRJlzaAIJunSGt7GB9Qek5Ex5IW_vw==">
+    <title>ЛР. Булеві операції. </title>
+    <meta name="description"
+        content="Figma для новачків (частина 5): булеві операції з фігурами, включаючи поєднання, віднімання, перетин та інші маніпуляції для отримання більш складних форм. Перетворення на криві.">
+    <link href="pr_4_files/bootstrap.css" rel="stylesheet">
+    <link href="pr_4_files/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="pr_4_files/kv-widgets.min.css" rel="stylesheet">
+    <link href="pr_4_files/styles50.css" rel="stylesheet">
+    <link href="pr_4_files/emoji-cut.css" rel="stylesheet">
+    <link href="pr_4_files/slick.css" rel="stylesheet">
+    <link href="pr_4_files/slick-theme.css" rel="stylesheet">
+    <link href="pr_4_files/dropdown-x.min.css" rel="stylesheet">
+    <style>
+        #w1-slider-container-slider .slider-handle {
+            background: #000
+        }
+
+        #w1-slider-container-slider .slider-selection {
+            background: #EBEFF5
+        }
+    </style>
+    <style>
+        .green-highlight {
+            background: #72B17C !important;
+            border-radius: 0px;
+        }
+    </style>
+    <script type="text/javascript" async="" src="pr_4_files/analytics.js"></script>
+    <script type="text/javascript" async="" src="pr_4_files/js.js"></script>
+    <script src="pr_4_files/901767251576442.js" async=""></script>
+    <script async="" src="pr_4_files/fbevents.js"></script>
+    <script>window.slider_9027ad1d = { "min": 0, "max": 100, "handle": "round", "step": 1, "rangeHighlights": [{ "start": 61, "end": 81, "class": "green-highlight" }], "value": 10, "id": "w1-slider-container-slider" };
+    </script>
+
+    <link rel="alternate" hreflang="uk" href="https://frusia.pro/p/14">
+    <link rel="alternate" hreflang="en" href="https://frusia.pro/en/p/14">
+    <link rel="alternate" hreflang="ru" href="https://frusia.pro/ru/p/14">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://frusia.pro/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://frusia.pro/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://frusia.pro/favicon-16x16.png">
+    <link rel="manifest" href="https://frusia.pro/site.webmanifest">
+    <link rel="mask-icon" href="https://frusia.pro/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"><!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="pr_4_files/js_002.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-151312573-1');
+    </script>
+
+
+    <meta name="facebook-domain-verification" content="aipds6t6j2va0hp1opvgijr91k9zt7">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '901767251576442');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=901767251576442&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <div class="wrap" style="">
+        <div id="wrap-content" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 main-content ">
+                    <div class="row article-header">
+                        <div class="col-md-12">
+                            <div class="hidden-xs hidden-sm visible-md visible-lg"><img width="1140" height="512"
+                                    style="background:#B9CDD0" class="img-responsive lazy loaded"
+                                    data-src="/files/2021-09/0014-preview-horz-v3.svg" alt="Основи Figma. Частина 5"
+                                    src="pr_4_files/0014-preview-horz-v3.svg" data-ll-status="loaded"></div><br>
+                            <div class="hidden-md hidden-lg"><img width="1140" height="1140" style="background:#B9CDD0"
+                                    class="img-responsive lazy" data-src="/files/2022-04/0014-preview-square-v2.svg"
+                                    alt="Основи Figma. Частина 5"></div><br>
+                            <h1>Тема: Булеві операції</h1>
+                            <div style="width:100%;text-align:center;font-size:150%;font-weight:regular;color:#B2B5B6">
+                                Лабораторна робота
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-body">
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ul>
+                                    <li><a href="#10">Про булеві операції</a></li>
+                                    <li><a href="#20">Об'єднання фігур (Union Selection)</a></li>
+                                    <li><a href="#30">Віднімання фігур (Subtract Selection)</a></li>
+                                    <li><a href="#40">Перетин фігур (Intersect Selection)</a></li>
+                                    <li><a href="#50">Виключення фігур (Exclude Selection)</a></li>
+                                    <li><a href="#60">Перетворення на криві (Flatten Selection)</a></li>
+                                    <li><a href="#70">Домашнє завдання</a></li>
+                                    <li><a href="#80">Висновки</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="10"></a>
+                                <h2>Про булеві операції</h2>
+                                <p>Булеві операції – поняття не нове. Вони прийшли до нас із такої науки
+                                    як логіка, а математично можуть бути записані за допомогою теорії
+                                    множин. Активно використовуються у програмуванні при побудові складних
+                                    умов. Наприклад, відомі нам навіть із екселівських таблиць логічні
+                                    оператори «і», «або» та «не».</p>
+
+                                <p>Булеві операції потрібні для побудови складних векторних фігур із
+                                    простих примітивів. Наприклад, кілька кругів можна об'єднати у хмару. У
+                                    Figma є п'ять операцій:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>
+                                </p>
+                                <ul>
+                                    <li>Об'єднання</li>
+                                    <li>Віднімання</li>
+                                    <li>Перетин</li>
+                                    <li>Виключення</li>
+                                    <li>Перетворення на криві</li>
+                                </ul>
+                                <p></p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Для виконання роботи з цими інструментами потрібно два або більше векторних елементів
+                                    (фігур, примітивів).
+                                </p>
+
+                                <p>Після застосування одного з п'яти інструментів булевих операцій ми
+                                    отримаємо не просто готову фігуру. Figma об'єднує вектори в групу та
+                                    дозволяє редагувати кожен елемент (рухати, змінювати форму, скасовувати
+                                    дію булевої операції шляхом винесення елемента з групи).</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="20"></a>
+                                <h2>Об'єднання фігур (Union Selection)</h2>
+                                <p>Цю операцію слід застосовувати тоді, коли ви хочете отримати одну
+                                    суцільну фігуру із кількох. Як результат, для всіх частин цієї фігури
+                                    діятимуть однакові правила заливки, обводки або інших ефектів.</p>
+
+                                <p>Параметри майбутньої єдиної фігури будуть взяті з верхнього шару вибраних векторів.
+                                </p>
+
+                                <p>Давайте спробуємо зробити просту іконку за допомогою булевої операції
+                                    <strong>«Об'єднання».</strong> Для цього:
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Заздалегідь намалюйте дві або більше (в моєму випадку – три) векторні фігури.
+                                    </li>
+                                    <li>За допомогою кнопки Shift та лівої кнопки миші – виділяємо необхідні об'єкти. У
+                                        верхній панелі по центру у нас з'являється меню <strong>Boolean Groups</strong>
+                                        з боковою стрілочкою, натиснувши на яку, ми побачимо перелік команд.</li>
+                                    <li>Обираємо команду <strong>“Union Selection”.</strong></li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v7.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v7.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="30"></a>
+                                <h2>Віднімання фігур (Subtract Selection)</h2>
+                                <p>Актуально, якщо вам потрібно відрізати якусь частину, зробити отвір
+                                    чи вигин у фігурі. Як результат, ми побачимо найнижчий шар наших
+                                    векторних об'єктів, за винятком тих його частин, які були перекриті
+                                    шарами вище.</p>
+
+                                <p>Давайте спробуємо зробити просту іконку за допомогою булевої операції
+                                    <strong>«Віднімання».</strong> Для цього:
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Заздалегідь намалюйте векторні фігури. Пам'ятайте, що верхній шар ми віднімаємо
+                                        з нижнього.</li>
+                                    <li>За допомогою кнопки Shift та лівої кнопки миші – виділяємо потрібне. Вгорі з
+                                        правого боку у нас з'являється меню <strong>Boolean Groups</strong> з боковою
+                                        стрілочкою, натиснувши яку ми побачимо перелік команд.</li>
+                                    <li>Обираємо команду <strong>“Subtract Selection”.</strong></li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v8.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v8.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="40"></a>
+                                <h2>Перетин фігур (Intersect Selection)</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Цю
+                                    операцію потрібно застосувати для того, щоб видимою стала лише та
+                                    частина, на якій перетинаються наші векторні фігури. Тут параметри
+                                    заливки, обводки та інших ефектів будуть взяті з верхнього шару.</p>
+
+                                <p>Давайте спробуємо зробити просту іконку за допомогою булевої операції
+                                    <strong>«Перетин».</strong> Для цього:
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Заздалегідь намалюйте векторні фігури.</li>
+                                    <li>Повторюємо ті самі дії, що й з попередніми функціями. Щоб панель
+                                        Boolean Groups з'явилася, потрібно затиснути Shift та мишкою вибрати
+                                        фігури.</li>
+                                    <li>Обираємо команду <strong>“Intersect Selection”.</strong></li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v9.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v9.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="50"></a>
+                                <h2>Виключення фігур (Exclude Selection)</h2>
+                                <p>На відміну від перетину, Виключення працює протилежним чином.
+                                    Видимими стають ті частини векторних шарів, які НЕ перетинаються один з
+                                    одним.</p>
+
+                                <p>Давайте спробуємо зробити просту іконку за допомогою булевої операції
+                                    <strong>«Виняток».</strong> Для цього:
+                                </p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Заздалегідь намалюйте дві векторні фігури.</li>
+                                    <li>Затискаємо Shift та ЛКМ, щоб вибрати обидві одночасно.</li>
+                                    <li>На панелі обираємо команду
+                                        <strong>“Exclude Selection”.</strong>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v10.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v10.mp4">
+                                    </video>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <p><strong>Важливий момент:</strong> виключення працює лише з двома векторними шарами.
+                                    Якщо ми додамо на перетин двох шарів третій, то він інвертує дію. Приклад:</p>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v11.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v11.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="60"></a>
+                                <h2>Перетворення на криві (Flatten Selection)</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Зазвичай
+                                    цю операцію використовую в останню чергу для запікання результату перед
+                                    експортом до SVG. Це дозволяє оптимізувати кількість точок. Адже чим
+                                    менше місця займає іконка, тим швидше вона завантажиться під час
+                                    перегляду сторінки, на якій буде використана.</p>
+
+                                <p>В результаті виходить об'єднання усіх елементів в одну фігуру з
+                                    подальшим переведенням об'єктів у криві. Тобто ми більше не зможемо
+                                    змінювати вміст групи таким же чином як у “Union Selection”. Елементи
+                                    нашої групи переведені в криві, і ми можемо редагувати їх форму лише за
+                                    допомогою кривих.
+                                    Приклад:</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10">
+                                <div align="center" class="embed-responsive embed-responsive-16by9">
+                                    <video controls="controls" autoplay="autoplay" loop=""
+                                        class="embed-responsive-item lazy loaded" data-ll-status="loaded">
+                                        <source data-src="/files/2021-09/0015-06-v12.mp4" type="video/mp4"
+                                            src="pr_4_files/0015-06-v12.mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="70"></a>
+                                <h2>Домашнє завдання</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <ol>
+                                    <li>Намалюйте іконки, які наведені нижче на картинці згідно свого варіанту.
+                                        Використовуйте для малювання булеві операції. Спробуйте самостійно зрозуміти, яка операція є актуальною для
+                                        кожної з них.
+                                        Для більш легкого і точного відображення перенесіть картинку в Figma.
+                                        Пам'ятайте, що у фіналі кожна іконка має бути згрупована.
+                                        <img class="img-responsive center-block lazy loaded"
+                                            title="Перше домашнє завдання до 8-ого уроку з UX/UI курсу"
+                                            alt="Перше домашнє завдання до 8-ого уроку з UX/UI курсу"
+                                            data-src="/files/2021-09/0015-05-v1.png" src="pr_4_files/task.png"
+                                            data-ll-status="loaded">
+
+                                    </li>
+                                    <li>Використайте булеві операції
+                                        для того, щоб максимально точно повторити наступні іконки, згідно свого варіанту.
+                                        Зверніть особливу увагу на кольори та частинки, з яких вони складаються.
+                                        <img class="img-responsive center-block lazy loaded"
+                                            title="Друге домашнє завдання до 8-ого уроку з UX/UI курсу"
+                                            alt="Друге домашнє завдання до 8-ого уроку з UX/UI курсу"
+                                            data-src="/files/2021-09/0015-04-v2.png" src="pr_4_files/task2.png"
+                                            data-ll-status="loaded">
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8"><a id="80"></a>
+                                <h2>Висновки</h2>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <p>Ознайомилися з булевими операціями при створенні
+                                    складних елементів інтерфейсу, іконок, простих ілюстрацій. Якщо раніше ми об'єднували примітиви в групи, то
+                                    зараз ми знайомі з ефективнішими та зручнішими способами побудови
+                                    векторної графіки.</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+
+                        <!--noindex-->
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div> <!-- </div class="container-fluid"> -->
+
+
+
+
+    </div> <!-- </div class="wrap"> -->
+    <script src="pr_4_files/jquery.js"></script>
+    <script src="pr_4_files/bootstrap.js"></script>
+    <script src="pr_4_files/yii.js"></script>
+    <script src="pr_4_files/yii.validation.js"></script>
+    <script src="pr_4_files/bootstrap-slider.min.js"></script>
+    <script src="pr_4_files/kv-widgets.min.js"></script>
+    <script src="pr_4_files/yii.activeForm.js"></script>
+    <script src="pr_4_files/prism.js"></script>
+    <script src="pr_4_files/lazyload.min.js"></script>
+    <script src="pr_4_files/slick-init.js" 0="2"></script>
+    <script src="pr_4_files/slick.min.js" 0="2"></script>
+    <script src="pr_4_files/dropdown-x.min.js"></script>
+    <script>jQuery(function ($) {
+            jQuery('#enroll-to-course-modal').modal({ "show": false });
+            jQuery('#take-quiz-modal').modal({ "show": false });
+
+            $('.enroll-to-course-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#enroll-to-course-modal').modal('show');
+            });
+
+            $('.take-quiz-btn').click(function (event) {
+                event.preventDefault(); // Prevent default action
+                $('#course-nav-modal').modal('hide');
+                $('#take-quiz-modal').modal('show');
+            });
+
+            function processScroll(clientWindow) {
+                var stickyBlock = $('#sticky-block');
+                var scrollToTopButton = $('#scroll-to-top-btn');
+                var courseNavButton = $('#course-nav-btn');
+                var enrollButton = $('#enroll-to-course-btn-mobile');
+                var enrollButtonOffset = enrollButton.offset();
+                var windowScrollY = clientWindow.scrollTop();
+                var windowWidth = clientWindow.width();
+
+                // Show or hide scroll-to-top button depending on scroll position
+                if (windowScrollY > 100)
+                    scrollToTopButton.fadeIn();
+                else
+                    scrollToTopButton.fadeOut();
+
+                var showStickyBlock = false;
+
+                // Check if enroll button is already visible on screen
+                if (windowScrollY > (enrollButtonOffset.top + Math.round(enrollButton.outerHeight())))
+                    showStickyBlock = true;
+
+                if (showStickyBlock) {
+                    if (stickyBlock.css('display') == 'none') {
+                        courseNavButton.css('bottom', '96px');
+                        scrollToTopButton.css('bottom', '32px');
+                    }
+                    else {
+                        courseNavButton.css('bottom', 96 + stickyBlock.outerHeight() + 'px');
+                        scrollToTopButton.css('bottom', 32 + stickyBlock.outerHeight() + 'px');
+                    }
+
+                    stickyBlock.fadeIn(200);
+                }
+                else {
+                    courseNavButton.css('bottom', '96px');
+                    scrollToTopButton.css('bottom', '32px');
+                    stickyBlock.fadeOut(200);
+                }
+            }
+
+            $(document).ready(function () {
+                processScroll($(window));
+
+                $(window).scroll(function () { processScroll($(this)); });
+                $(window).resize(function () { processScroll($(this)); });
+
+            });
+            jQuery && jQuery.pjax && (jQuery.pjax.defaults.maxCacheLength = 0);
+            if (jQuery('#w1-slider-container').data('slider')) { jQuery('#w1-slider-container').slider('destroy'); }
+            jQuery('#w1-slider-container').slider(slider_9027ad1d);
+            jQuery('#w1-slider-container').on('change', function (e) {
+                if (e.value && e.value.newValue !== undefined) {
+                    $('#addcommentform-dragcaptcha').val(e.value.newValue);
+                }
+            });
+
+            $('#w1-slider-container').on('slideStop', function () { $('#w1-slider-container').trigger('change') });
+            jQuery('#w0').yiiActiveForm([{ "id": "addcommentform-author", "name": "author", "container": ".field-addcommentform-author", "input": "#addcommentform-author", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Вкажіть своє ім'я" }); yii.validation.string(value, messages, { "message": "Ім'я занадто довге", "max": 64, "tooLong": "Значення \"Автор\" повинно містити максимум 64 символа.", "skipOnEmpty": 1 }); } }, { "id": "addcommentform-text", "name": "text", "container": ".field-addcommentform-text", "input": "#addcommentform-text", "validate": function (attribute, value, messages, deferred, $form) { yii.validation.required(value, messages, { "message": "Залиште коментар" }); yii.validation.string(value, messages, { "message": "Значення \"Текст\" має бути текстовим рядком.", "skipOnEmpty": 1 }); } }], []);
+            jQuery('#course-nav-modal').modal({ "show": false });
+            jQuery('#searchModal').modal({ "show": false });
+        });</script>
+    <script>
+        if (!localStorage.getItem("cookiesAccepted"))
+            document.querySelector('.cookie-consent').style.display = 'block';
+
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.querySelector('.cookie-consent').style.display = 'none';
+        }
+
+        jQuery.fn.hasAttr = function (name) { return this.attr(name) !== undefined; };
+
+
+
+        function processScrollForScrollToTopBtn(clientWindow) {
+            var scrollToTopBtn = $('#scroll-to-top-btn');
+            //var courseNavBtn = $('#course-nav-btn');
+
+            // var stickyBlock = $('#sticky-block'); 
+            // var buyButton = $('.product-overview button');
+            // var buyButtonOffset = buyButton.offset();
+            // var windowScrollY= clientWindow.scrollTop();
+            // var windowWidth= clientWindow.width();
+
+            //Check to see if the window is top if not then display scroll to topbutton
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    scrollToTopBtn.fadeIn();
+                }
+                else {
+                    scrollToTopBtn.fadeOut();
+                }
+            });
+        }
+
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+
+        $(document).ready(function () {
+            // Search in modal
+            $("#searchButton").click(function () {
+                $("#searchModal").modal('show');
+                $("#searchModal").on('shown.bs.modal', function () {
+                    $("#searchbar-input").focus();
+                });
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scroll-to-top-btn').fadeIn();
+                }
+                else {
+                    $('#scroll-to-top-btn').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('#scroll-to-top-btn').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            processScrollForScrollToTopBtn($(window));
+            $(window).scroll(function () { processScrollForScrollToTopBtn($(this)); });
+            $(window).resize(function () { processScrollForScrollToTopBtn($(this)); });
+
+
+            // Set course navigation position if element exists
+            var courseNav = $('#course-nav');
+            if (courseNav.length) {
+
+
+                $('#course-nav-btn').show();
+                $("#course-nav-btn").click(function (event) {
+                    event.preventDefault();
+                    $("#course-nav-modal").modal('show');
+                    $("#course-nav-modal").on('shown.bs.modal', function () {
+
+                    });
+                });
+            }
+            else {
+                $('#course-nav-btn').hide();
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>
